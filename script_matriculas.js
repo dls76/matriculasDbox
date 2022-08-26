@@ -346,7 +346,7 @@ function gerarPDF() {
     document.getElementById('taxa-valor').innerHTML = parseFloat(taxa).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})
 
     let atendente = document.getElementById('select-atendentes').value
-    document.getElementById('nome-atendente').innerHTML = "Atendente: "+atendente
+    document.getElementById('nome-atendente').innerHTML = "Atendente <br>" + atendente
 
     let obs = document.getElementById('input-obs').value
 
