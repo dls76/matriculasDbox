@@ -368,6 +368,8 @@ function gerarPDF() {
     catch (e) {
         console.error(e)        
     }
+
+    dataHoje()
 }
 
 function dataHoje() {
