@@ -376,6 +376,8 @@ function dataHoje() {
     const days = ["Domingo", "Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sábado"];
     const date = d.getDate();
     const year = d.getFullYear();
+    const hora = d.getHours();
+    const min = d.getMinutes();
     document.getElementById("dataAtual").innerHTML = 
-    days[d.getDay()] + `, ` + date + ` de ` + months[d.getMonth()] + ` de ` + year;
+    days[d.getDay()] + `, ` + date + ` de ` + months[d.getMonth()] + ` de ` + year + " - " + hora + ":" + min + ".";
 }
