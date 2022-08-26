@@ -1,5 +1,232 @@
+// FUNÇÕES QUE CALCULAM AS MENSALIDADES
 
-  function myFunction() {
+function calculaMensalidade1() {
+    
+    let valor = parseFloat(document.getElementById('serie1').value)
+    document.getElementById('valorSerie1').value = valor.toFixed(2)
+    
+    // Último input (valor final em 12x, sem negociações)
+    document.getElementById('valorFinal1').value = valor.toFixed(2)
+
+    let desconto = document.getElementById('desconto1').value
+
+    let parceria = document.getElementById('parceria1').value
+    
+        if (parceria != "") {
+            desconto = 10
+            document.getElementById('desconto1').value = desconto
+        } 
+    
+    let parcelas = document.getElementById('parcelas1').value
+    
+    let valorFinal = (((valor*12)/parcelas)/100)*(100-desconto)
+
+    // Último input (valor final negociado - com desconto e parcelamento)
+    document.getElementById('valorFinal1').value = valorFinal.toFixed(2)
+
+    somarValorFinal()
+        // document.getElementById('valorSerie1').value = valor.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+        // document.getElementById('valorFinal1').value = valor.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+    mostraResumo1()
+}
+
+function calculaMensalidade2() {
+    
+    let valor = parseFloat(document.getElementById('serie2').value)
+    
+    document.getElementById('valorSerie2').value = valor.toFixed(2)
+    document.getElementById('valorFinal2').value = valor.toFixed(2)
+
+    let desconto = document.getElementById('desconto2').value
+
+    let parceria = document.getElementById('parceria2').value
+
+        if (parceria != "") {
+            desconto = 10
+            document.getElementById('desconto2').value = desconto
+        } 
+    
+    let parcelas = document.getElementById('parcelas2').value
+    
+    let valorFinal = (((valor*12)/parcelas)/100)*(100-desconto)
+    document.getElementById('valorFinal2').value = valorFinal.toFixed(2)
+    
+    somarValorFinal()
+    mostraResumo2()
+}
+
+function calculaMensalidade3() {
+    
+    let valor = parseFloat(document.getElementById('serie3').value)
+    
+    document.getElementById('valorSerie3').value = valor.toFixed(2)
+    document.getElementById('valorFinal3').value = valor.toFixed(2)
+
+    let desconto = document.getElementById('desconto3').value
+
+    let parceria = document.getElementById('parceria3').value
+
+        if (parceria != "") {
+            desconto = 10
+            document.getElementById('desconto3').value = desconto
+        } 
+    
+    let parcelas = document.getElementById('parcelas3').value
+    
+    let valorFinal = (((valor*12)/parcelas)/100)*(100-desconto)
+    document.getElementById('valorFinal3').value = valorFinal.toFixed(2)
+    
+    somarValorFinal()
+    mostraResumo3()
+}
+
+function calculaMensalidade4() {
+    let valor = parseFloat(document.getElementById('serie4').value)
+    
+    document.getElementById('valorSerie4').value = valor.toFixed(2)
+    document.getElementById('valorFinal4').value = valor.toFixed(2)
+
+    let desconto = document.getElementById('desconto4').value
+
+    let parceria = document.getElementById('parceria4').value
+
+        if (parceria != "") {
+            desconto = 10
+            document.getElementById('desconto4').value = desconto
+        } 
+    
+    let parcelas = document.getElementById('parcelas4').value
+    
+    let valorFinal = (((valor*12)/parcelas)/100)*(100-desconto)
+    document.getElementById('valorFinal4').value = valorFinal.toFixed(2)
+
+    somarValorFinal()
+    mostraResumo4()
+}
+
+// FUNÇÕES QUE MOSTRAM OS DADOS À DIREITA - NA TABELA RESUMO
+function mostraResumo1() {
+    let nome = document.getElementById('txtNome1').value
+    let ser = document.getElementById("serie1");
+    let text = ser.options[ser.selectedIndex].text;
+    let vIntegral = document.getElementById('valorSerie1').value
+    let vFinal = document.getElementById('valorFinal1').value
+    let dMes = parseFloat(vIntegral) - parseFloat(vFinal).toFixed(2)
+    let dAno = dMes*12
+
+    document.getElementById('n1').innerHTML = nome
+    document.getElementById('sr1').innerHTML = text
+    document.getElementById('vI1').innerHTML = parseFloat(vIntegral).toFixed(2)
+    document.getElementById('dm1').innerHTML = parseFloat(dMes).toFixed(2)
+    document.getElementById('da1').innerHTML = parseFloat(dAno).toFixed(2)
+    document.getElementById('vf1').innerHTML = parseFloat(vFinal).toFixed(2)
+
+    // document.getElementById('d1').value = parseFloat(dMes).toFixed(2)
+    // document.getElementById('dano1').value = parseFloat(dAno).toFixed(2)
+
+}
+
+function mostraResumo2() {
+    let nome2 = document.getElementById('txtNome2').value
+    let ser = document.getElementById("serie2");
+    let text = ser.options[ser.selectedIndex].text;
+    let vIntegral2 = document.getElementById('valorSerie2').value
+    let vFinal2 = document.getElementById('valorFinal2').value
+    let dMes2 = parseFloat(vIntegral2) - parseFloat(vFinal2).toFixed(2)
+    let dAno2 = dMes2*12
+
+    document.getElementById('n2').innerHTML = nome2
+    document.getElementById('sr2').innerHTML = text
+    document.getElementById('vI2').innerHTML = parseFloat(vIntegral2).toFixed(2)
+    document.getElementById('dm2').innerHTML = parseFloat(dMes2).toFixed(2)
+    document.getElementById('da2').innerHTML = parseFloat(dAno2).toFixed(2)
+    document.getElementById('vf2').innerHTML = parseFloat(vFinal2).toFixed(2)
+
+    // document.getElementById('d2').value = parseFloat(dMes2).toFixed(2)
+    // document.getElementById('dano2').value = parseFloat(dAno2).toFixed(2)
+    
+}
+
+function mostraResumo3() {
+    let nome3 = document.getElementById('txtNome3').value
+    let ser = document.getElementById("serie3");
+    let text = ser.options[ser.selectedIndex].text;
+    let vIntegral3 = document.getElementById('valorSerie3').value
+    let vFinal3 = document.getElementById('valorFinal3').value
+    let dMes3 = parseFloat(vIntegral3) - parseFloat(vFinal3).toFixed(2)
+    let dAno3 = dMes3*12
+
+    document.getElementById('n3').innerHTML = nome3
+    document.getElementById('sr3').innerHTML = text
+    document.getElementById('vI3').innerHTML = parseFloat(vIntegral3).toFixed(2)
+    document.getElementById('dm3').innerHTML = parseFloat(dMes3).toFixed(2)
+    document.getElementById('da3').innerHTML = parseFloat(dAno3).toFixed(2)
+    document.getElementById('vf3').innerHTML = parseFloat(vFinal3).toFixed(2)
+
+    // document.getElementById('d3').value = parseFloat(dMes3).toFixed(2)
+    // document.getElementById('dano3').value = parseFloat(dAno3).toFixed(2)
+
+}
+
+function mostraResumo4() {
+    let nome4 = document.getElementById('txtNome4').value
+    let ser = document.getElementById("serie4");
+    let text = ser.options[ser.selectedIndex].text;
+    let vIntegral4 = document.getElementById('valorSerie4').value
+    let vFinal4 = document.getElementById('valorFinal4').value
+    let dMes4 = parseFloat(vIntegral4) - parseFloat(vFinal4).toFixed(2)
+    let dAno4 = dMes4*12
+
+    document.getElementById('n4').innerHTML = nome4
+    document.getElementById('sr4').innerHTML = text
+    document.getElementById('vI4').innerHTML = parseFloat(vIntegral4).toFixed(2)
+    document.getElementById('dm4').innerHTML = parseFloat(dMes4).toFixed(2)
+    document.getElementById('da4').innerHTML = parseFloat(dAno4).toFixed(2)
+    document.getElementById('vf4').innerHTML = parseFloat(vFinal4).toFixed(2)
+
+    // document.getElementById('d4').value = parseFloat(dMes4).toFixed(2)
+    // document.getElementById('dano4').value = parseFloat(dAno4).toFixed(2)
+
+}
+
+
+// FUNÇÃO QUE SOMA O VALOR FINAL
+function somarValorFinal() {
+    let v1 = document.getElementById('serie1').value
+    if (v1 === "") {v1 = 0}
+    let va1 = document.getElementById('valorFinal1').value
+    if (va1 === "") {va1 = 0} 
+
+    let v2 = document.getElementById('serie2').value
+    if (v2 === "") {v2 = 0}
+    let va2 = document.getElementById('valorFinal2').value
+    if (va2 === "") {va2 = 0} 
+
+    let v3 = document.getElementById('serie3').value
+    if (v3 === "") {v3 = 0}
+    let va3 = document.getElementById('valorFinal3').value
+    if (va3 === "") {va3 = 0} 
+
+    let v4 = document.getElementById('serie4').value
+    if (v4 === "") {v4 = 0} 
+    let va4 = document.getElementById('valorFinal4').value
+    if (va4 === "") {va4 = 0} 
+
+    let totalIntegral = parseFloat(v1)+parseFloat(v2)+parseFloat(v3)+parseFloat(v4)
+    let somatorio = parseFloat(va1) + parseFloat(va2) + parseFloat(va3) + parseFloat(va4)
+    let descontoMes = parseFloat(v1-va1) + parseFloat(v2-va2) + parseFloat(v3-va3) + parseFloat(v4-va4)
+    let descontoAno = descontoMes*12
+
+    document.getElementById('somaIntegral').innerHTML = totalIntegral.toFixed(2)
+    document.getElementById('dMes').innerHTML = descontoMes.toFixed(2)
+    document.getElementById('dAno').innerHTML = descontoAno.toFixed(2)
+    document.getElementById('divSomaTotal').innerHTML = somatorio.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})
+    document.getElementById('somaTotal').innerHTML = somatorio.toFixed(2)
+    
+    return somatorio
+}
+
+function myFunction() {
     // Get the checkbox
     var checkBox = document.getElementById("myCheckD");
     // Get the output text
@@ -141,236 +368,6 @@ function gerarPDF() {
     catch (e) {
         console.error(e)        
     }
-}
-
-function calculaMensalidade1() {
-    
-    let valor = document.getElementById('serie1').value
-    
-    valor = parseFloat(valor)
-    document.getElementById('valorSerie1').value = valor.toFixed(2)
-    document.getElementById('valorFinal1').value = valor.toFixed(2)
-
-    let desconto = document.getElementById('desconto1').value
-
-    let parceria = document.getElementById('parceria1').value
-    if (parceria != "") {
-        desconto = 10
-        document.getElementById('desconto1').value = desconto
-    } else {
-        desconto = desconto
-        document.getElementById('desconto1').value = desconto
-    }
-    
-    let parcelas = document.getElementById('parcelas1').value
-    
-    let valorFinal = (((valor*12)/parcelas)/100)*(100-desconto)
-    document.getElementById('valorFinal1').value = valorFinal.toFixed(2)
-
-    var dm1 = valor - valorFinal
-    somarValorFinal()
-        // document.getElementById('valorSerie1').value = valor.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
-        // document.getElementById('valorFinal1').value = valor.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
-    mostraResumo1()
-}
-
-function calculaMensalidade2() {
-    
-    let valor = document.getElementById('serie2').value
-    valor = parseFloat(valor)
-    document.getElementById('valorSerie2').value = valor.toFixed(2)
-    document.getElementById('valorFinal2').value = valor.toFixed(2)
-
-    let desconto = document.getElementById('desconto2').value
-
-    let parceria = document.getElementById('parceria2').value
-    if (parceria != "") {
-        desconto = 10
-        document.getElementById('desconto2').value = desconto
-    } else {
-        desconto = desconto
-        document.getElementById('desconto2').value = desconto
-    }
-    
-    let parcelas = document.getElementById('parcelas2').value
-    
-    let valorFinal = (((valor*12)/parcelas)/100)*(100-desconto)
-    document.getElementById('valorFinal2').value = valorFinal.toFixed(2)
-    
-    somarValorFinal()
-    mostraResumo2()
-}
-
-function calculaMensalidade3() {
-    
-    let valor = document.getElementById('serie3').value
-    valor = parseFloat(valor)
-    document.getElementById('valorSerie3').value = valor.toFixed(2)
-    document.getElementById('valorFinal3').value = valor.toFixed(2)
-
-    let desconto = document.getElementById('desconto3').value
-
-    let parceria = document.getElementById('parceria3').value
-    if (parceria != "") {
-        desconto = 10
-        document.getElementById('desconto3').value = desconto
-    } else {
-        desconto = desconto
-        document.getElementById('desconto3').value = desconto
-    }
-    
-    let parcelas = document.getElementById('parcelas3').value
-    
-    let valorFinal = (((valor*12)/parcelas)/100)*(100-desconto)
-    document.getElementById('valorFinal3').value = valorFinal.toFixed(2)
-    
-    somarValorFinal()
-    mostraResumo3()
-}
-
-function calculaMensalidade4() {
-    let valor = document.getElementById('serie4').value
-    valor = parseFloat(valor)
-    document.getElementById('valorSerie4').value = valor.toFixed(2)
-    document.getElementById('valorFinal4').value = valor.toFixed(2)
-
-    let desconto = document.getElementById('desconto4').value
-
-    let parceria = document.getElementById('parceria4').value
-    if (parceria != "") {
-        desconto = 10
-        document.getElementById('desconto4').value = desconto
-    } else {
-        desconto = desconto
-        document.getElementById('desconto4').value = desconto
-    }
-    
-    let parcelas = document.getElementById('parcelas4').value
-    
-    let valorFinal = (((valor*12)/parcelas)/100)*(100-desconto)
-    document.getElementById('valorFinal4').value = valorFinal.toFixed(2)
-
-    somarValorFinal()
-    mostraResumo4()
-}
-
-function mostraResumo1() {
-    let nome = document.getElementById('txtNome1').value
-    let ser = document.getElementById("serie1");
-    let text = ser.options[ser.selectedIndex].text;
-    let vIntegral = document.getElementById('valorSerie1').value
-    let vFinal = document.getElementById('valorFinal1').value
-    let dMes = parseFloat(vIntegral) - parseFloat(vFinal).toFixed(2)
-    let dAno = dMes*12
-
-    document.getElementById('n1').innerHTML = nome
-    document.getElementById('sr1').innerHTML = text
-    document.getElementById('vI1').innerHTML = parseFloat(vIntegral).toFixed(2)
-    document.getElementById('dm1').innerHTML = parseFloat(dMes).toFixed(2)
-    document.getElementById('da1').innerHTML = parseFloat(dAno).toFixed(2)
-    document.getElementById('vf1').innerHTML = parseFloat(vFinal).toFixed(2)
-
-    // document.getElementById('d1').value = parseFloat(dMes).toFixed(2)
-    // document.getElementById('dano1').value = parseFloat(dAno).toFixed(2)
-
-}
-
-function mostraResumo2() {
-    let nome2 = document.getElementById('txtNome2').value
-    let ser = document.getElementById("serie2");
-    let text = ser.options[ser.selectedIndex].text;
-    let vIntegral2 = document.getElementById('valorSerie2').value
-    let vFinal2 = document.getElementById('valorFinal2').value
-    let dMes2 = parseFloat(vIntegral2) - parseFloat(vFinal2).toFixed(2)
-    let dAno2 = dMes2*12
-
-    document.getElementById('n2').innerHTML = nome2
-    document.getElementById('sr2').innerHTML = text
-    document.getElementById('vI2').innerHTML = parseFloat(vIntegral2).toFixed(2)
-    document.getElementById('dm2').innerHTML = parseFloat(dMes2).toFixed(2)
-    document.getElementById('da2').innerHTML = parseFloat(dAno2).toFixed(2)
-    document.getElementById('vf2').innerHTML = parseFloat(vFinal2).toFixed(2)
-
-    // document.getElementById('d2').value = parseFloat(dMes2).toFixed(2)
-    // document.getElementById('dano2').value = parseFloat(dAno2).toFixed(2)
-    
-}
-
-function mostraResumo3() {
-    let nome3 = document.getElementById('txtNome3').value
-    let ser = document.getElementById("serie3");
-    let text = ser.options[ser.selectedIndex].text;
-    let vIntegral3 = document.getElementById('valorSerie3').value
-    let vFinal3 = document.getElementById('valorFinal3').value
-    let dMes3 = parseFloat(vIntegral3) - parseFloat(vFinal3).toFixed(2)
-    let dAno3 = dMes3*12
-
-    document.getElementById('n3').innerHTML = nome3
-    document.getElementById('sr3').innerHTML = text
-    document.getElementById('vI3').innerHTML = parseFloat(vIntegral3).toFixed(2)
-    document.getElementById('dm3').innerHTML = parseFloat(dMes3).toFixed(2)
-    document.getElementById('da3').innerHTML = parseFloat(dAno3).toFixed(2)
-    document.getElementById('vf3').innerHTML = parseFloat(vFinal3).toFixed(2)
-
-    // document.getElementById('d3').value = parseFloat(dMes3).toFixed(2)
-    // document.getElementById('dano3').value = parseFloat(dAno3).toFixed(2)
-
-}
-
-function mostraResumo4() {
-    let nome4 = document.getElementById('txtNome4').value
-    let ser = document.getElementById("serie4");
-    let text = ser.options[ser.selectedIndex].text;
-    let vIntegral4 = document.getElementById('valorSerie4').value
-    let vFinal4 = document.getElementById('valorFinal4').value
-    let dMes4 = parseFloat(vIntegral4) - parseFloat(vFinal4).toFixed(2)
-    let dAno4 = dMes4*12
-
-    document.getElementById('n4').innerHTML = nome4
-    document.getElementById('sr4').innerHTML = text
-    document.getElementById('vI4').innerHTML = parseFloat(vIntegral4).toFixed(2)
-    document.getElementById('dm4').innerHTML = parseFloat(dMes4).toFixed(2)
-    document.getElementById('da4').innerHTML = parseFloat(dAno4).toFixed(2)
-    document.getElementById('vf4').innerHTML = parseFloat(vFinal4).toFixed(2)
-
-    // document.getElementById('d4').value = parseFloat(dMes4).toFixed(2)
-    // document.getElementById('dano4').value = parseFloat(dAno4).toFixed(2)
-
-}
-
-function somarValorFinal() {
-    let v1 = document.getElementById('serie1').value
-    if (v1 === "") {v1 = 0}
-    let va1 = document.getElementById('valorFinal1').value
-    if (va1 === "") {va1 = 0} 
-
-    let v2 = document.getElementById('serie2').value
-    if (v2 === "") {v2 = 0}
-    let va2 = document.getElementById('valorFinal2').value
-    if (va2 === "") {va2 = 0} 
-
-    let v3 = document.getElementById('serie3').value
-    if (v3 === "") {v3 = 0}
-    let va3 = document.getElementById('valorFinal3').value
-    if (va3 === "") {va3 = 0} 
-
-    let v4 = document.getElementById('serie4').value
-    if (v4 === "") {v4 = 0} 
-    let va4 = document.getElementById('valorFinal4').value
-    if (va4 === "") {va4 = 0} 
-
-    let totalIntegral = parseFloat(v1)+parseFloat(v2)+parseFloat(v3)+parseFloat(v4)
-    let somatorio = parseFloat(va1) + parseFloat(va2) + parseFloat(va3) + parseFloat(va4)
-    let descontoMes = parseFloat(v1-va1) + parseFloat(v2-va2) + parseFloat(v3-va3) + parseFloat(v4-va4)
-    let descontoAno = descontoMes*12
-
-    document.getElementById('somaIntegral').innerHTML = totalIntegral.toFixed(2)
-    document.getElementById('dMes').innerHTML = descontoMes.toFixed(2)
-    document.getElementById('dAno').innerHTML = descontoAno.toFixed(2)
-    document.getElementById('divSomaTotal').innerHTML = somatorio.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})
-    document.getElementById('somaTotal').innerHTML = somatorio.toFixed(2)
-    
-    return somatorio
 }
 
 function dataHoje() {
