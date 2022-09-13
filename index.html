@@ -134,7 +134,7 @@
 
                     <!-- Laudoaluno 1 -->
                     <div class="divCheck">
-                        <label for="checkLaudo1">Laudo</label>
+                        <label for="checkLaudo1">Laudo/Atendimento especial</label>
                         <input type="checkbox" name="" id="checkLaudo1" onclick="temLaudo()">
                     </div>
 
@@ -225,7 +225,7 @@
 
                     <!-- Laudoaluno 2 -->
                     <div class="divCheck">
-                        <label for="checkLaudo2">Laudo</label>
+                        <label for="checkLaudo2">Laudo/Atendimento especial</label>
                         <input type="checkbox" name="" id="checkLaudo2" onclick="temLaudo2()">
                     </div>
 
@@ -314,7 +314,7 @@
 
                     <!-- Laudoaluno 3 -->
                     <div class="divCheck">
-                        <label for="checkLaudo3">Laudo</label>
+                        <label for="checkLaudo3">Laudo/Atendimento especial</label>
                         <input type="checkbox" name="" id="checkLaudo3" onclick="temLaudo3()">
                     </div>
 
@@ -402,7 +402,7 @@
 
                     <!-- Laudoaluno 3 -->
                     <div class="divCheck">
-                        <label for="checkLaudo4">Laudo</label>
+                        <label for="checkLaudo4">Laudo/Atendimento especial</label>
                         <input type="checkbox" name="" id="checkLaudo4" onclick="temLaudo4()">
                     </div>
 
@@ -519,7 +519,7 @@
     <!-- Botões de informações adicionais -->
     <div id="conteiner-btns-esquerda">
         <button id="btn-ct" class="btn btn-primary" onclick="toggleCT()">Contraturno</button>
-        <button id="btn-taxa" class="btn btn-primary" onclick="toggleTaxa()">Inclusão</button>
+        <button id="btn-taxa" class="btn btn-primary" onclick="toggleInclusao()">Inclusão</button>
         <button id="btn-materiais" class="btn btn-primary" onclick="toggleMateriais()">Materiais</button>
         <button id="btn-livros" class="btn btn-primary" onclick="toggleLivros()">Loja</button>
         <button id="btn-cantina" class="btn btn-primary" onclick="toggleCantina()">Cantina</button>
@@ -541,6 +541,8 @@
     <div id="taxa-eventos">
         <label for="taxa">Taxa</label>
         <input id="taxa" type="text" value="496" class="form-control form-control-sm valor">
+        <img src="imagens/calendar.png" alt="" id="calendar-icon" onclick="toggleTaxa()">
+        
     </div>
 
      <!-- Atendentes -->
@@ -578,12 +580,20 @@
     </div>
 </div>
 
+<!-- ================================================== -->
+<!-- ================================================== -->
+<!-- ================================================== -->
+<!-- ================================================== -->
+<!-- ----------- Área para impressão ------------------ -->
+<!-- ================================================== -->
+<!-- ================================================== -->
+<!-- ================================================== -->
+<!-- ================================================== -->
 
-<!-- Área para impressão -->
 <div id="proposta_resumo">
 
     <div id="header">
-        <img id="logo" src="logoCaab.jpg" />   
+        <img id="logo" src="imagens/logoCaab.jpg" />   
     </div>
 
     <h5 id="titulo_resumo2" class="titulo_resumo2">VALORES 2023</h5>
@@ -637,13 +647,12 @@
             <div class="title-item">INFORMAÇÕES ADICIONAIS</div>
             <div id="textPg" class="content-item-obs" style="display: none;"></div>
             <div id="textD" class="content-item-obs" style="display:none">Didáticos inclusos. Entrega no início do período de aulas, mediante quitação das mensalidades de janeiro e fevereiro.</div>
-            <div class="content-item-obs" id="last-child-obs">Esta proposta não é garantia de vaga. Ela é pessoal, intransferível e sujeita a alterações. Portanto, está condicionada à confidencialidade.</div>
+            <div class="content-item-obs" id="last-child-obs">Esta proposta não é garantia de vaga. Ela é pessoal, intransferível e sujeita a alterações. Portanto, está condicionada à confidencialidade. Eventuais negociações financeiras estão condicionadas à não necessidade de atendimento especializado ou diferenciado, em qualquer tempo ao longo do ano letivo.</div>
         </div>
 
         <div class="adicionais footer-item" id="footer-item-obs">
             <div class="title-item">LIVROS, MATERIAIS E UNIFORMES</div>
-            <div class="content-item-obs" id="last-child-obs">Acesse todas as informações através do link da nossa loja, Novo Tempo Store: 
-                https://linktr.ee/novotempostoreasp.
+            <div class="content-item-obs" id="last-child-obs">Acesse todas as informações através do link da nossa loja, Novo Tempo Store: https://linktr.ee/novotempostoreasp.
             </div>
         </div>
 
@@ -651,12 +660,12 @@
 
             <div class="footer-item">
              <div class="title-item">TAXA DE EVENTOS</div>
-             <div class="content-item"><span id="taxa-valor"></span> por aluno no ato da matrícula - à vista ou até 5x no cartão. Cobre ações em datas especiais do calendário escolar (páscoa, mães, pais, etc.).</div>
+             <div class="content-item"><span id="taxa-valor"></span> por aluno no ato da matrícula - à vista ou até 6x no cartão. Cobre ações em datas especiais do calendário escolar (páscoa, mães, pais, etc.).</div>
             </div>
            
             <div class="footer-item">
              <div class="title-item">CANTINA</div>
-             <div class="content-item">Serviço terceirizado com supervisão de nutricionista. Pagamento à vista ou através de créditos antecipados. Até o 2º EF, opção de contrato mensal (incluso: 1 salgado, 1 doce, 1 suco, 1 fruta). WhatsApp: 41-99672-0012</div>
+             <div class="content-item">Serviço terceirizado com supervisão de nutricionista. Formas de pagamento: à vista, créditos antecipados ou pelo aplicativo VLUPT. Até o 2º EF, opção de contrato mensal (incluso: 1 salgado, 1 doce, 1 suco, 1 fruta). Contato whatsapp: 41-99672-0012</div>
             </div>
 
         </div>
@@ -666,8 +675,11 @@
             <div class="title-item">CONTRATURNO</div>
 
             <table class="tabelaCt2" style="width: 93%; margin: 10px auto 0 auto;">
+                <tr  style="text-align: center;">
+                    <td colspan="4"><em>Para alunos que estudam à tarde e chegam pela manhã</em></td>
+                </tr>
                 <tr>
-                    <td style="width: 10%;">Duração</td>
+                    <td style="width: 10%;">Plano</td>
                     <td style="width: 10%;">Chegada</td>
                     <td style="width: 70%;">Serviços</td>
                     <td style="width: 20%;">Valor</td>
@@ -679,51 +691,27 @@
                     <td>R$ 722,00</td>
                 </tr>
                 <tr>
-                    <td>4h</td>
-                    <td>9:00</td>
-                    <td style="text-align: left;">Almoço, Tarefas, 2 Lanches, Projeto, 1 Oficina</td>  
-                    <td>R$ 577,60</td>
-                </tr>
-                <tr>
                     <td>3h</td>
                     <td>10:00</td>
-                    <td style="text-align: left;">Almoço, Tarefas, 1 lanche</td>
-                    <td>R$ 505,40</td>
-                </tr>
-                <tr>
-                    <td>2h</td>
-                    <td>11:00</td>
-                    <td style="text-align: left;">Almoço</td>
-                    <td>R$ 433,20</td>
+                    <td style="text-align: left;">Almoço, 2 Lanches, Tarefas, Projeto, 1 Oficina</td>  
+                    <td>R$ 577,60</td>
                 </tr>
             </table>
-    
+    <br>
             <table class="tabelaCt2" style="width: 93%; margin: 10px auto 14px auto;">
+                <tr  style="text-align: center;">
+                    <td colspan="4"><em>Para alunos que estudam pela manhã e permanecem à tarde</em></td>
+                </tr>
                 <tr>
-                    <td style="width: 10%;">Duração</td>
-                    <td style="width: 10%;">Chegada</td>
+                    <td style="width: 10%;">Plano</td>
+                    <td style="width: 10%;">Saída</td>
                     <td style="width: 70%;">Serviços</td>
                     <td style="width: 20%;">Valor</td>
-                </tr>
-    
-                <tr>
-                    <td>2h</td>
-                    <td>14:00</td>
-                    <td style="text-align: left;">Almoço</td>
-                    <td>R$ 433,20</td>
                 </tr>
                 <tr>
                     <td>3h</td>
                     <td>15:00</td>
-                    <td style="text-align: left;">Almoço, Tarefas, 1 lanche</td>
-                    
-                    <td>R$ 505,40</td>
-                </tr>
-                <tr>
-                    <td>4h</td>
-                    <td>16:00</td>
-                    <td style="text-align: left;">Almoço, Tarefas, 2 Lanches, Projeto, 1 Oficina</td>
-                    
+                    <td style="text-align: left;">Almoço, 2 Lanches, Tarefas, Projeto, 1 Oficina</td>  
                     <td>R$ 577,60</td>
                 </tr>
                 <tr>
@@ -751,6 +739,41 @@
 
 <br>
 
+<!-- ================================================== -->
+<!-- ================================================== -->
+<!-- ================================================== -->
+<!-- ================================================== -->
+<!-- ----------- Área popups ------------------ -->
+<!-- ================================================== -->
+<!-- ================================================== -->
+<!-- ================================================== -->
+<!-- ================================================== -->
+<!-- POPUP TAXA -->
+<div class="popup popupTaxa" id="popupTaxa">
+
+    <div class="overlay"></div>
+    
+    <div class="content">
+        <div class="close-btn" onclick="toggleTaxa()">&times;</div>
+        <br><br>
+        <h5>Taxa de Eventos</h5>
+        <hr>
+        <ul>
+            <li>Alunos novos - R$ 496,00 (valor único)</li>
+        </ul>
+        <hr>
+        <ul>
+            <li>Alunos veteranos</li><br>
+            <p>=> Até 15/09 - R$ 330,00</p>
+            <p>=> Até 09/10 - R$ 396,00</p>
+            <p>=> Até 06/11 - R$ 471,00</p>
+            <p>=> Após 06/11 - R$ 496,00</p>
+        </ul>
+        <hr>
+       
+    </div>
+</div>
+
 
 <!-- POPUP CONTRATURNO -->
 <div class="popup" id="popupCt">
@@ -759,10 +782,10 @@
     
     <div class="content">
         <div class="close-btn" onclick="toggleCT()">&times;</div>
-        <h5>Contraturno - Planos</h5>
+        <h5>Contraturno</h5>
 
         <table class="tabelaCt" style="width: 90%; margin: 30px auto 0 auto; font-size: small;">
-            <th style="width: 10%;">Duração</th>
+            <th style="width: 10%;">Plano</th>
             <th style="width: 10%;">Chegada</th>
             <th style="width: 60%;">Serviços</th>
             <th style="width: 10%;">Desconto</th>
@@ -776,54 +799,26 @@
                 <td>R$ 722,00</td>
             </tr>
             <tr>
-                <td>4h</td>
-                <td>9:00</td>
+                <td>3h</td>
+                <td>10:00</td>
                 <td style="text-align: left;">Almoço, Higiene, Descanso, Tarefas, Lanche 1, Lanche 2, Projeto, Oficina 1</td>
                 <td>20%</td>
                 <td>R$ 577,60</td>
             </tr>
-            <tr>
-                <td>3h</td>
-                <td>10:00</td>
-                <td style="text-align: left;">Almoço, Higiene, Descanso, 1 lanche</td>
-                <td>30%</td>
-                <td>R$ 505,40</td>
-            </tr>
-            <tr>
-                <td>2h</td>
-                <td>11:00</td>
-                <td style="text-align: left;">Almoço, Higiene, Descanso</td>
-                <td>40%</td>
-                <td>R$ 433,20</td>
-            </tr>
         </table>
 
         <table class="tabelaCt" style="width: 90%; margin: 30px auto 0 auto; font-size: small;">
-            <th style="width: 10%;">Duração</th>
+            <th style="width: 10%;">Plano</th>
             <th style="width: 10%;">Saída</th>
             <th style="width: 60%;">Serviços</th>
             <th style="width: 10%;">Desconto</th>
             <th style="width: 20%;">Valor</th>
 
             <tr>
-                <td>2h</td>
-                <td>14:00</td>
-                <td style="text-align: left;">Almoço, Higiene, Descanso</td>
-                <td>40%</td>
-                <td>R$ 433,20</td>
-            </tr>
-            <tr>
                 <td>3h</td>
                 <td>15:00</td>
-                <td style="text-align: left;">Almoço, Higiene, Descanso, Tarefas, 1 lanche</td>
-                <td>30%</td>
-                <td>R$ 505,40</td>
-            </tr>
-            <tr>
-                <td>4h</td>
-                <td>16:00</td>
                 <td style="text-align: left;">Almoço, Higiene, Descanso, Tarefas, Lanche 1, Lanche 2, Projeto, Oficina 1</td>
-                <td>30%</td>
+                <td>20%</td>
                 <td>R$ 577,60</td>
             </tr>
             <tr>
@@ -837,14 +832,15 @@
     </div>
 </div>
 
+
 <!-- POPUP INCLUSÃO -->
-<div class="popup" id="popupTaxa">
+<div class="popup" id="popupInclusao">
 
     <div class="overlay"></div>
     
     <div class="content">
        
-        <div class="close-btn" onclick="toggleTaxa()">&times;</div>
+        <div class="close-btn" onclick="toggleInclusao()">&times;</div>
        
         <h5>Inclusão</h5>
         

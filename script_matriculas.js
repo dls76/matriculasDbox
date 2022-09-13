@@ -451,8 +451,9 @@ function dataHoje() {
 }
 
 // Exibem os modais
-function toggleCT() {document.getElementById("popupCt").classList.toggle("active")}
 function toggleTaxa() {document.getElementById("popupTaxa").classList.toggle("active")}
+function toggleCT() {document.getElementById("popupCt").classList.toggle("active")}
+function toggleInclusao() {document.getElementById("popupInclusao").classList.toggle("active")}
 function toggleMateriais() {document.getElementById("popupMateriais").classList.toggle("active")}
 function toggleLivros() {document.getElementById("popupLivros").classList.toggle("active")}
 function toggleUniformes() {document.getElementById("popupUniformes").classList.toggle("active")}
