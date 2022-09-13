@@ -44,10 +44,15 @@ body {
     box-shadow: 1px 1px 4px #c2c2c2;
 }
 
+.conteiner/*:not(:first-of-type)*/ {
+    border-left: 4px solid dodgerblue;
+}
+
 .sub-conteiner {
     width: 100%;
     display: flex;
     justify-content: space-between;
+
 }
 
 .parcerias {
@@ -67,11 +72,11 @@ body {
     padding: 0;
     display: flex;
     justify-content: space-between;
-    margin-top: 15px;
+    visibility: hidden;
 }
 
 #conteinerFormTotal div {
-    padding: 10px;
+    padding: 6px;
     color: white;
     font-weight: 500;
 }
@@ -155,11 +160,11 @@ textarea {
     width: 96%;
     font-size: 12.5px;
     margin: 0 auto;
-    table-layout: fixed;
+    /* table-layout: fixed; */
 }
 
 #tabela-resumo th {
-    padding: 5px;
+    padding: 7.7px;
     font-weight: 400;
     overflow: hidden;
 }
@@ -169,6 +174,7 @@ textarea {
     color: rgb(71, 71, 71);
     padding: 10px 10px;
     overflow: hidden;
+    /* border: 1px solid red; */
 }
 
 #observacoes, #conteiner-buttons {
@@ -217,24 +223,18 @@ textarea {
     height:20px;
     border-top: 1px solid gray;
 }
-/* 
-.form-check {
-    margin-left: 20px;
-    width: 90%;
-    border: 1px solid red;
-} */
 
 #conteiner-btns-esquerda {
-    margin-top: 20px;
+    /* margin-top: 10px; */
     display: flex;
     justify-content: flex-start;
-    padding: 14px;
+    padding: 10px;
     border-bottom: 1px solid lightgray;
 }
 
 #conteiner-btns-esquerda button {
     width: 80px;
-    font-size: 12px;
+    font-size: 10.5px;
     flex-grow: 1;
     margin: 1px;
 }
@@ -427,9 +427,8 @@ ul li p {
 #tabela-opcoes-pg {
     width: 100%;
     font-size: 14px;
-    text-align: left;
-    margin-top: 10px;
-    margin-bottom: 0;
+    text-align: center;
+    margin: 8px;
 }
 
 .container-didaticos-taxa {
@@ -437,7 +436,6 @@ ul li p {
     display: flex;
     justify-content: space-between;
     margin: 4px auto 0 auto;
-    /* border: 1px solid red; */
     padding: 14px 0;
     border-bottom: 1px solid lightgray;
 }
@@ -537,4 +535,44 @@ ul li p {
 
 #catalogo-logo {
     width: 100px;
+}
+
+.divCheck { 
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    font-size: .65rem;
+    color: gray;
+    border: 1px solid lightgray;
+    border-radius: 3px;
+    padding: 1.2px;
+    
+}
+
+.divCheck input {
+    margin-left: 10px;
+}
+
+.divCheck label {
+    margin-left: 8px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    top: 4px;
+}
+
+#txtNome1, #txtNome2, #txtNome3, #txtNome4 {
+    color: #0D6EFD;
+    font-weight: 800;
+}
+
+#input-responsaveis {
+    color: #0D6EFD;
+    width: 70%;
+}
+
+#input-melhor-contato {
+    width: 30%;
+    text-align: right;
 }

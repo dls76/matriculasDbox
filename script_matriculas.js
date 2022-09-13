@@ -1,34 +1,111 @@
-// FUNÇÕES QUE CALCULAM AS MENSALIDADES
+// Informa se o aluno 1 tem laudo ou necessita atendimento especial
+temLaudo = () => {
+    let checkBox = document.getElementById("checkLaudo1");
+    if ( checkBox.checked == true) {
+        document.getElementById('parceria1').value = "";
+        document.getElementById('parceria1').readOnly = true;
+        document.getElementById("desconto1").readOnly = true;
+        document.getElementById("desconto1").style.color = "lightGray";
+        document.getElementById("desconto1").value = 0;
+        calculaMensalidade1()
+    } else {
+        checkBox.checked = false; 
+        document.getElementById('parceria1').readOnly = false;
+        document.getElementById("desconto1").readOnly = false;
+        document.getElementById("desconto1").style.color = "black";
+        calculaMensalidade1()
+    }
+}
 
+// Informa se o aluno 2 tem laudo ou necessita atendimento especial
+temLaudo2 = () => {
+    let checkBox = document.getElementById("checkLaudo2");
+    if ( checkBox.checked == true) {
+        document.getElementById('parceria2').value = "";
+        document.getElementById('parceria2').readOnly = true;
+        document.getElementById("desconto2").readOnly = true;
+        document.getElementById("desconto2").style.color = "lightGray";
+        document.getElementById("desconto2").value = 0;
+        calculaMensalidade2()
+    } else {
+        checkBox.checked = false; 
+        document.getElementById('parceria2').readOnly = false;
+        document.getElementById("desconto2").readOnly = false;
+        document.getElementById("desconto2").style.color = "black";
+        calculaMensalidade2()
+    }
+}
+
+// Informa se o aluno 3 tem laudo ou necessita atendimento especial
+temLaudo3 = () => {
+    let checkBox = document.getElementById("checkLaudo3");
+    if ( checkBox.checked == true) {
+        document.getElementById('parceria3').value = "";
+        document.getElementById('parceria3').readOnly = true;
+        document.getElementById("desconto3").readOnly = true;
+        document.getElementById("desconto3").style.color = "lightGray";
+        document.getElementById("desconto3").value = 0;
+        calculaMensalidade3()
+    } else {
+        checkBox.checked = false; 
+        document.getElementById('parceria3').readOnly = false;
+        document.getElementById("desconto3").readOnly = false;
+        document.getElementById("desconto3").style.color = "black";
+        calculaMensalidade3()
+    }
+}
+
+
+// Informa se o aluno 4 tem laudo ou necessita atendimento especial
+temLaudo4 = () => {
+    let checkBox = document.getElementById("checkLaudo4");
+    if ( checkBox.checked == true) {
+        document.getElementById('parceria4').value = "";
+        document.getElementById('parceria4').readOnly = true;
+        document.getElementById("desconto4").readOnly = true;
+        document.getElementById("desconto4").style.color = "lightGray";
+        document.getElementById("desconto4").value = 0;
+        calculaMensalidade4()
+    } else {
+        checkBox.checked = false; 
+        document.getElementById('parceria4').readOnly = false;
+        document.getElementById("desconto4").readOnly = false;
+        document.getElementById("desconto4").style.color = "black";
+        calculaMensalidade4()
+    }
+}
+
+// Funções que calculam as mensalidades
 function calculaMensalidade1() {
-    
+
     let valor = parseFloat(document.getElementById('serie1').value)
     document.getElementById('valorSerie1').value = valor.toFixed(2)
-    
+
     // Último input (valor final em 12x, sem negociações)
     document.getElementById('valorFinal1').value = valor.toFixed(2)
-
     let desconto = document.getElementById('desconto1').value
-
     let parceria = document.getElementById('parceria1').value
-    
+
         if (parceria != "") {
             desconto = 10
             document.getElementById('desconto1').value = desconto
-        } 
-    
+        }
+
     let parcelas = document.getElementById('parcelas1').value
-    
+
     let valorFinal = (((valor*12)/parcelas)/100)*(100-desconto)
 
     // Último input (valor final negociado - com desconto e parcelamento)
     document.getElementById('valorFinal1').value = valorFinal.toFixed(2)
-
     somarValorFinal()
-        // document.getElementById('valorSerie1').value = valor.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
-        // document.getElementById('valorFinal1').value = valor.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
     mostraResumo1()
-}
+
+} 
+
+
+
+
+
 
 function calculaMensalidade2() {
     
@@ -54,7 +131,6 @@ function calculaMensalidade2() {
     somarValorFinal()
     mostraResumo2()
 }
-
 function calculaMensalidade3() {
     
     let valor = parseFloat(document.getElementById('serie3').value)
@@ -79,7 +155,6 @@ function calculaMensalidade3() {
     somarValorFinal()
     mostraResumo3()
 }
-
 function calculaMensalidade4() {
     let valor = parseFloat(document.getElementById('serie4').value)
     
@@ -125,7 +200,6 @@ function mostraResumo1() {
     // document.getElementById('dano1').value = parseFloat(dAno).toFixed(2)
 
 }
-
 function mostraResumo2() {
     let nome2 = document.getElementById('txtNome2').value
     let ser = document.getElementById("serie2");
@@ -146,7 +220,6 @@ function mostraResumo2() {
     // document.getElementById('dano2').value = parseFloat(dAno2).toFixed(2)
     
 }
-
 function mostraResumo3() {
     let nome3 = document.getElementById('txtNome3').value
     let ser = document.getElementById("serie3");
@@ -167,7 +240,6 @@ function mostraResumo3() {
     // document.getElementById('dano3').value = parseFloat(dAno3).toFixed(2)
 
 }
-
 function mostraResumo4() {
     let nome4 = document.getElementById('txtNome4').value
     let ser = document.getElementById("serie4");
@@ -188,7 +260,6 @@ function mostraResumo4() {
     // document.getElementById('dano4').value = parseFloat(dAno4).toFixed(2)
 
 }
-
 
 // FUNÇÃO QUE SOMA O VALOR FINAL
 function somarValorFinal() {
@@ -226,9 +297,10 @@ function somarValorFinal() {
     return somatorio
 }
 
-function myFunction() {
+// Exibe didáticos inclusos na área de impressão
+function exibeDidaticos() {
     // Get the checkbox
-    var checkBox = document.getElementById("myCheckD");
+    var checkBox = document.getElementById("checkDidaticos");
     // Get the output text
     var text = document.getElementById("textD");
   
@@ -238,9 +310,10 @@ function myFunction() {
     } else {
       text.style.display = "none";
     }
-  }
+}
 
-  function myFunctionPg() {
+// Exibe opção de pagamento na área de impressão
+function myFunctionPg() {
     // Get the buttons
     var btn1 = document.getElementById("btn1");
     var btn2 = document.getElementById("btn2");
@@ -263,17 +336,9 @@ function myFunction() {
         textPg.style.display = "block"
         textPg.innerHTML = btn4.value
     }
-  }
+}
 
-function toggleCT() {document.getElementById("popupCt").classList.toggle("active")}
-function toggleTaxa() {document.getElementById("popupTaxa").classList.toggle("active")}
-function toggleMateriais() {document.getElementById("popupMateriais").classList.toggle("active")}
-function toggleLivros() {document.getElementById("popupLivros").classList.toggle("active")}
-function toggleUniformes() {document.getElementById("popupUniformes").classList.toggle("active")}
-function toggleCantina() {document.getElementById("popupCantina").classList.toggle("active")}
-function toggleTransporte() {document.getElementById("popupTransporte").classList.toggle("active")}
-function toggleDocumentos() {document.getElementById("popupDocumentos").classList.toggle("active")}
-
+// Gera arquivo em PDF com todas as informações da negociação
 function gerarPDF() {
 
     let resp = document.getElementById('input-responsaveis').value
@@ -372,6 +437,7 @@ function gerarPDF() {
     dataHoje()
 }
 
+// Exibe a data e hora atual e o contato do atendente
 function dataHoje() {
     const d = new Date();
     const months = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"];
@@ -383,3 +449,14 @@ function dataHoje() {
     document.getElementById("dataAtual").innerHTML = 
     days[d.getDay()] + `, ` + date + ` de ` + months[d.getMonth()] + ` de ` + year + " - " + hora + ":" + min + ".";
 }
+
+// Exibem os modais
+function toggleCT() {document.getElementById("popupCt").classList.toggle("active")}
+function toggleTaxa() {document.getElementById("popupTaxa").classList.toggle("active")}
+function toggleMateriais() {document.getElementById("popupMateriais").classList.toggle("active")}
+function toggleLivros() {document.getElementById("popupLivros").classList.toggle("active")}
+function toggleUniformes() {document.getElementById("popupUniformes").classList.toggle("active")}
+function toggleCantina() {document.getElementById("popupCantina").classList.toggle("active")}
+function toggleTransporte() {document.getElementById("popupTransporte").classList.toggle("active")}
+function toggleDocumentos() {document.getElementById("popupDocumentos").classList.toggle("active")}
+
