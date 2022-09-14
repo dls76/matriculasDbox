@@ -55,7 +55,6 @@ temLaudo3 = () => {
     }
 }
 
-
 // Informa se o aluno 4 tem laudo ou necessita atendimento especial
 temLaudo4 = () => {
     let checkBox = document.getElementById("checkLaudo4");
@@ -101,12 +100,6 @@ function calculaMensalidade1() {
     mostraResumo1()
 
 } 
-
-
-
-
-
-
 function calculaMensalidade2() {
     
     let valor = parseFloat(document.getElementById('serie2').value)
@@ -368,6 +361,59 @@ function gerarPDF() {
     let valor3 = document.getElementById('valorFinal3')
     let valor4 = document.getElementById('valorFinal4')
 
+    // variáveis dos didáticos
+    let didat1 = document.getElementById('checkDidaticos1')
+    let didat2 = document.getElementById('checkDidaticos2')
+    let didat3 = document.getElementById('checkDidaticos3')
+    let didat4 = document.getElementById('checkDidaticos4')
+
+    // variáveis das séries
+    let serie1 = document.getElementById('serie1')
+    let serie2 = document.getElementById('serie2')
+    let serie3 = document.getElementById('serie3')
+    let serie4 = document.getElementById('serie4')
+
+    // condicionais dos didáticos
+    if ( didat1.checked == true ) {
+        document.getElementById('didaticos1').innerHTML = 'Inclusos'
+    } else {
+        if (serie1.value != "0.0") {
+            document.getElementById('didaticos1').innerHTML = 'Não Inclusos'
+        } else {
+            document.getElementById('didaticos1').innerHTML = ''
+        }
+    }
+
+    if ( didat2.checked == true ) {
+        document.getElementById('didaticos2').innerHTML = 'Inclusos'
+    } else {
+        if (serie2.value != "0.0") {
+            document.getElementById('didaticos2').innerHTML = 'Não Inclusos'
+        } else {
+            document.getElementById('didaticos2').innerHTML = ''
+        }
+    }
+
+    if (didat3.checked == true ) {
+        document.getElementById('didaticos3').innerHTML = 'Inclusos'
+    } else {
+        if (serie3.value != "0.0") {
+            document.getElementById('didaticos3').innerHTML = 'Não Inclusos'
+        } else {
+            document.getElementById('didaticos3').innerHTML = ''
+        }
+    }
+
+    if ( didat4.checked == true ) {
+        document.getElementById('didaticos4').innerHTML = 'Inclusos'
+    } else {
+        if (serie4.value != "0.0") {
+            document.getElementById('didaticos4').innerHTML = 'Não Inclusos'
+        } else {
+            document.getElementById('didaticos4').innerHTML = ''
+        }
+    }
+
     let somatoria = document.getElementById('divSomaTotal')
 
     document.getElementById('aluno1').innerText = aluno1.value
@@ -379,6 +425,7 @@ function gerarPDF() {
     document.getElementById('sre2').innerHTML = ser2.innerText
     document.getElementById('sre3').innerHTML = ser3.innerText
     document.getElementById('sre4').innerHTML = ser4.innerText
+
     
     if (document.getElementById('serie1').value === "0.0") {
         document.getElementById('p1').innerHTML = ""
@@ -450,6 +497,83 @@ function dataHoje() {
     days[d.getDay()] + `, ` + date + ` de ` + months[d.getMonth()] + ` de ` + year + " - " + hora + ":" + min + ".";
 }
 
+// Incluir Didáticos (zerar desconto e parceria)
+incluirDidaticos1 = () => {
+    
+    let checkBox = document.getElementById("checkDidaticos1");
+    
+    if (checkBox.checked == true) { 
+        document.getElementById('parceria1').value = "";
+        document.getElementById('parceria1').readOnly = true;
+        document.getElementById("desconto1").readOnly = true;
+        document.getElementById("desconto1").style.color = "lightGray";
+        document.getElementById("desconto1").value = 0;
+        calculaMensalidade1()
+    } else {
+        checkBox.checked = false; 
+        document.getElementById('parceria1').readOnly = false;
+        document.getElementById("desconto1").readOnly = false;
+        document.getElementById("desconto1").style.color = "black";
+        calculaMensalidade1()
+    }
+}
+incluirDidaticos2 = () => {
+
+    let checkBox2 = document.getElementById("checkDidaticos2");
+    
+    if (checkBox2.checked == true) { 
+        document.getElementById('parceria2').value = "";
+        document.getElementById('parceria2').readOnly = true;
+        document.getElementById("desconto2").readOnly = true;
+        document.getElementById("desconto2").style.color = "lightGray";
+        document.getElementById("desconto2").value = 0;
+        calculaMensalidade2()
+    } else {
+        checkBox2.checked = false; 
+        document.getElementById('parceria2').readOnly = false;
+        document.getElementById("desconto2").readOnly = false;
+        document.getElementById("desconto2").style.color = "black";
+        calculaMensalidade2()
+    }
+}
+incluirDidaticos3 = () => {
+    
+    let checkBox3 = document.getElementById("checkDidaticos3");
+    
+    if (checkBox3.checked == true) { 
+        document.getElementById('parceria3').value = "";
+        document.getElementById('parceria3').readOnly = true;
+        document.getElementById("desconto3").readOnly = true;
+        document.getElementById("desconto3").style.color = "lightGray";
+        document.getElementById("desconto3").value = 0;
+        calculaMensalidade3()
+    } else {
+        checkBox3.checked = false; 
+        document.getElementById('parceria3').readOnly = false;
+        document.getElementById("desconto3").readOnly = false;
+        document.getElementById("desconto3").style.color = "black";
+        calculaMensalidade3()
+    }
+}
+incluirDidaticos4 = () => {
+    
+    let checkBox4 = document.getElementById("checkDidaticos4");
+    
+    if (checkBox4.checked == true) { 
+        document.getElementById('parceria4').value = "";
+        document.getElementById('parceria4').readOnly = true;
+        document.getElementById("desconto4").readOnly = true;
+        document.getElementById("desconto4").style.color = "lightGray";
+        document.getElementById("desconto4").value = 0;
+        calculaMensalidade4()
+    } else {
+        checkBox4.checked = false; 
+        document.getElementById('parceria4').readOnly = false;
+        document.getElementById("desconto4").readOnly = false;
+        document.getElementById("desconto4").style.color = "black";
+        calculaMensalidade4()
+    }
+}
 // Exibem os modais
 function toggleTaxa() {document.getElementById("popupTaxa").classList.toggle("active")}
 function toggleCT() {document.getElementById("popupCt").classList.toggle("active")}
@@ -460,4 +584,3 @@ function toggleUniformes() {document.getElementById("popupUniformes").classList.
 function toggleCantina() {document.getElementById("popupCantina").classList.toggle("active")}
 function toggleTransporte() {document.getElementById("popupTransporte").classList.toggle("active")}
 function toggleDocumentos() {document.getElementById("popupDocumentos").classList.toggle("active")}
-

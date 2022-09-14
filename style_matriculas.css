@@ -544,7 +544,7 @@ ul li p {
 
 .divCheck { 
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
     width: 100%;
     font-size: .65rem;
@@ -552,7 +552,15 @@ ul li p {
     border: 1px solid lightgray;
     border-radius: 3px;
     padding: 1.2px;
-    
+    /* border: 1px solid red; */
+}
+
+.divCheck div {
+    display: flex;
+}
+
+.divCheck div:nth-child(2) {
+    margin-right: 10px;
 }
 
 .divCheck input {

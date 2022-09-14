@@ -72,9 +72,7 @@
                             <option value="1342">2º Méd.</option>
                             <option value="1297">3º Méd.</option>
                             <option value="722">CT-6h</option>
-                            <option value="516">CT-4h</option>
                             <option value="451.5">CT-3h</option>
-                            <option value="387">CT-2h</option>
                         </select>
                         
                         
@@ -132,10 +130,18 @@
 
                     </div>
 
-                    <!-- Laudoaluno 1 -->
+                    <!-- checkbox area 1-->
                     <div class="divCheck">
-                        <label for="checkLaudo1">Laudo/Atendimento especial</label>
-                        <input type="checkbox" name="" id="checkLaudo1" onclick="temLaudo()">
+                        <!-- Laudo aluno1 -->
+                        <div>
+                            <label for="checkLaudo1">Laudo/Atendimento especial</label>
+                            <input type="checkbox" name="" id="checkLaudo1" onclick="temLaudo()">
+                        </div>
+                        <!-- Didáticos aluno1 -->
+                        <div>
+                            <label for="checkDidaticos1">Incluir Didáticos</label>
+                            <input type="checkbox" name="" id="checkDidaticos1" onclick="incluirDidaticos1()">
+                        </div>
                     </div>
 
 
@@ -166,9 +172,9 @@
                             <option value="1342">2º Méd.</option>
                             <option value="1297">3º Méd.</option>
                             <option value="722">CT-6h</option>
-                            <option value="516">CT-4h</option>
+                            
                             <option value="451.5">CT-3h</option>
-                            <option value="387">CT-2h</option>
+                            
                         </select>
                         
                         <input id="valorSerie2" style="width: 25%;" type="text" name="valor" 
@@ -223,10 +229,18 @@
                             class="form-control form-control-sm valor">
                     </div>
 
-                    <!-- Laudoaluno 2 -->
+                    <!-- Checkbox area2 -->
                     <div class="divCheck">
-                        <label for="checkLaudo2">Laudo/Atendimento especial</label>
-                        <input type="checkbox" name="" id="checkLaudo2" onclick="temLaudo2()">
+                        <!-- Laudo aluno2 -->
+                        <div>
+                            <label for="checkLaudo2">Laudo/Atendimento especial</label>
+                            <input type="checkbox" name="" id="checkLaudo2" onclick="temLaudo2()">
+                        </div>
+                        <!-- Didáticos aluno2 -->
+                        <div>
+                            <label for="checkDidaticos2">Incluir didáticos</label>
+                            <input type="checkbox" name="" id="checkDidaticos2" onclick="incluirDidaticos2()">
+                        </div>
                     </div>
 
                 </div>
@@ -255,9 +269,9 @@
                             <option value="1342">2º Méd.</option>
                             <option value="1297">3º Méd.</option>
                             <option value="722">CT-6h</option>
-                            <option value="516">CT-4h</option>
+                            
                             <option value="451.5">CT-3h</option>
-                            <option value="387">CT-2h</option>
+                            
                         </select>
 
                         <input id="valorSerie3" style="width: 25%;" type="text" name="valor" 
@@ -312,10 +326,16 @@
                             class="form-control form-control-sm valor" readonly>
                     </div>
 
-                    <!-- Laudoaluno 3 -->
+                    <!-- Checkbox area3 -->
                     <div class="divCheck">
-                        <label for="checkLaudo3">Laudo/Atendimento especial</label>
-                        <input type="checkbox" name="" id="checkLaudo3" onclick="temLaudo3()">
+                        <div>
+                            <label for="checkLaudo3">Laudo/Atendimento especial</label>
+                            <input type="checkbox" name="" id="checkLaudo3" onclick="temLaudo3()">
+                        </div>
+                        <div>
+                            <label for="checkDidaticos3">Incluir Didáticos</label>
+                            <input type="checkbox" name="" id="checkDidaticos3" onclick="incluirDidaticos3()">
+                        </div>
                     </div>
 
                 </div>
@@ -345,9 +365,9 @@
                             <option value="1342">2º Méd.</option>
                             <option value="1297">3º Méd.</option>
                             <option value="722">CT-6h</option>
-                            <option value="516">CT-4h</option>
+                            
                             <option value="451.5">CT-3h</option>
-                            <option value="387">CT-2h</option>
+                            
                         </select>
 
                         <input id="valorSerie4" style="width: 25%;" type="text" name="valor" 
@@ -400,19 +420,21 @@
                             class="form-control form-control-sm valor" readonly>
                     </div>
 
-                    <!-- Laudoaluno 3 -->
+                    <!-- checkbox area4 -->
                     <div class="divCheck">
-                        <label for="checkLaudo4">Laudo/Atendimento especial</label>
-                        <input type="checkbox" name="" id="checkLaudo4" onclick="temLaudo4()">
+                        <div>
+                            <label for="checkLaudo4">Laudo/Atendimento especial</label>
+                            <input type="checkbox" name="" id="checkLaudo4" onclick="temLaudo4()">
+                        </div>
+                        <div>
+                            <label for="checkDidaticos4">Incluir Didáticos</label>
+                            <input type="checkbox" name="" id="checkDidaticos4" onclick="incluirDidaticos4()">
+                        </div>
                     </div>
 
                 </div>       
 
-                
-                
-
-                
-                
+             
                 <!-- TOTAL -->
                 <div class="conteinerForm" id="conteinerFormTotal">
 
@@ -531,17 +553,17 @@
 <div class="container-didaticos-taxa">
 
     <!-- Didáticos -->
-    <div> 
+    <!-- <div> 
         <label for="didaticos">Didáticos 
             <input type="checkbox" id="checkDidaticos" name="didaticos" value="Didáticos inclusos" onclick="exibeDidaticos()">
         </label>
-    </div>
+    </div> -->
 
     <!-- Taxa -->
     <div id="taxa-eventos">
         <label for="taxa">Taxa</label>
         <input id="taxa" type="text" value="496" class="form-control form-control-sm valor">
-        <img src="imagens/calendar.png" alt="" id="calendar-icon" onclick="toggleTaxa()">
+        <img src="imagens/calendar.jpg" alt="" id="calendar-icon" onclick="toggleTaxa()">
         
     </div>
 
@@ -555,9 +577,11 @@
             <option value="Douglas - douglas.santos@educadventista.org.br">Douglas</option>
             <option value="Eduardo - eduardo.blaskovi@educadventista.org.br">Eduardo</option>
             <option value="Eliesio - eliesio.alencar@educadventista.org.br">Eliesio</option>
+            <option value="Guilherme - guilherme.lunardon@educadventista.org.br">Guilherme</option>
             <option value="Karol - karoline.medeiros@educadventista.org.br">Karol</option>
             <option value="Raquel - raquel.santos@educadventista.org.br">Raquel</option>
             <option value="Roberta - roberta.ribeiro@educadventista.org.br">Roberta</option>
+            <option value="Rudi - rudimar.nemitz@educadventista.org.br">Rudimar</option>
             <option value="Sandra - sandra.nascimento@educadventista.org.br">Sandra</option>
             <option value="Thiago - thiago.carvalho@educadventista.org.br">Thiago</option>
           </select>
@@ -605,35 +629,50 @@
         <table id="tabela_resumo">
 
             <tr>
-                <th style="width: 50%; text-align: left;">Aluno(s)</th>
+                <th style="width: 40%; text-align: left;">Aluno(s)</th>
                 <th style="width: 15%; text-align: left;">Série</th>
-                <th style="width: 15%; text-align: center;">Parcelas</th>
+                <th style="width: 15%; text-align: left;">Didáticos</th>
+                <th style="width: 10%; text-align: center;">Parcelas</th>
                 <th style="width: 20%; text-align: center;">Valor</th>
             </tr>
+
+            <!-- aluno1 resumo -->
             <tr>
                 <td id="aluno1" style="width: 50%; text-align: left;"></td>
                 <td id="sre1" style="text-align: left;"></td>
+                <td id="didaticos1" style="text-align: left;"></td>
                 <td id="p1" style="text-align: center;"></td>
                 <td id="v1" style="text-align: right; padding-right: 7px;"></td>
             </tr>
+
+            <!-- aluno2 resumo -->
             <tr>
                 <td id="aluno2" style="width: 50%; text-align: left;"></td>
                 <td id="sre2" style="text-align: left;"></td>
+                <td id="didaticos2" style="text-align: left;"></td>
                 <td id="p2" style="text-align: center;"></td>
                 <td id="val2" style="text-align: right; padding-right: 7px;"></td>
             </tr>
+
+            <!-- aluno3 resumo -->
             <tr>
                 <td id="aluno3" style="width: 50%; text-align: left;"></td>
                 <td id="sre3" style="text-align: left;"></td>
+                <td id="didaticos3" style="text-align: left;"></td>
                 <td id="p3" style="text-align: center;"></td>
                 <td id="val3" style="text-align: right; padding-right: 7px;"></td>
             </tr>
+
+            <!-- aluno4 resumo -->
             <tr>
                 <td id="aluno4" style="width: 50%; text-align: left;"></td>
                 <td id="sre4" style="text-align: left;"></td>
+                <td id="didaticos4" style="text-align: left;"></td>
                 <td id="p4" style="text-align: center;"></td>
                 <td id="val4" style="text-align: right; padding-right: 7px;"></td>
             </tr>
+
+            <!-- Total do resumo - última linha -->
             <tr id="last_line">
                 <td style="font-weight: 700;">Total</td>
                 <td></td>
