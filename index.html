@@ -75,7 +75,6 @@
                             <option value="451.5">CT-3h</option>
                         </select>
                         
-                        
 
                         <!-- Valor integral aluno 1 -->
                         <input  id="valorSerie1" style="width: 25%;" type="text" name="valor" class="form-control form-control-sm valor valorIntegral" readonly>
@@ -197,9 +196,12 @@
                             <input type="checkbox" name="" id="checkLaudo1" onclick="temLaudo()">
                         </div>
                         <!-- Didáticos aluno1 -->
-                        <div>
+                        <div class="div-didaticos">
                             <label for="checkDidaticos1">Incluir Didáticos</label>
                             <input type="checkbox" name="" id="checkDidaticos1" onclick="incluirDidaticos1()">
+                        </div>
+                        <div class="copiar">
+                            <img src="imagens/copy.png" alt="" onclick="copiarDados()">
                         </div>
                     </div>
 
@@ -342,7 +344,7 @@
                             <option value="1">1x</option>
                         </select>
 
-                        <input id="valorFinal2" style="width: 25%;" type="text" name="valor" 
+                        <input id="valorFinal2" style="width: 25%; color: #0D6EFD;" type="text" name="valor" 
                             class="form-control form-control-sm valor">
                     </div>
 
@@ -354,7 +356,7 @@
                             <input type="checkbox" name="" id="checkLaudo2" onclick="temLaudo2()">
                         </div>
                         <!-- Didáticos aluno2 -->
-                        <div>
+                        <div class="div-didaticos">
                             <label for="checkDidaticos2">Incluir didáticos</label>
                             <input type="checkbox" name="" id="checkDidaticos2" onclick="incluirDidaticos2()">
                         </div>
@@ -497,7 +499,7 @@
                             <option value="1">1x</option>
                         </select>
                         
-                        <input id="valorFinal3" style="width: 25%;" type="text" name="valor" 
+                        <input id="valorFinal3" style="width: 25%; color: #0D6EFD;" type="text" name="valor" 
                             class="form-control form-control-sm valor" readonly>
                     </div>
 
@@ -507,7 +509,7 @@
                             <label for="checkLaudo3">Laudo/Atendimento especial</label>
                             <input type="checkbox" name="" id="checkLaudo3" onclick="temLaudo3()">
                         </div>
-                        <div>
+                        <div class="div-didaticos">
                             <label for="checkDidaticos3">Incluir Didáticos</label>
                             <input type="checkbox" name="" id="checkDidaticos3" onclick="incluirDidaticos3()">
                         </div>
@@ -649,7 +651,7 @@
                             <option value="1">1x</option>
                         </select>
 
-                        <input id="valorFinal4" style="width: 25%;" type="text" name="valor" 
+                        <input id="valorFinal4" style="width: 25%; color: #0D6EFD;" type="text" name="valor" 
                             class="form-control form-control-sm valor" readonly>
                     </div>
 
@@ -659,7 +661,7 @@
                             <label for="checkLaudo4">Laudo/Atendimento especial</label>
                             <input type="checkbox" name="" id="checkLaudo4" onclick="temLaudo4()">
                         </div>
-                        <div>
+                        <div class="div-didaticos">
                             <label for="checkDidaticos4">Incluir Didáticos</label>
                             <input type="checkbox" name="" id="checkDidaticos4" onclick="incluirDidaticos4()">
                         </div>
@@ -784,13 +786,6 @@
 
 
 <div class="container-didaticos-taxa">
-
-    <!-- Didáticos -->
-    <!-- <div> 
-        <label for="didaticos">Didáticos 
-            <input type="checkbox" id="checkDidaticos" name="didaticos" value="Didáticos inclusos" onclick="exibeDidaticos()">
-        </label>
-    </div> -->
 
     <!-- Taxa -->
     <div id="taxa-eventos">
@@ -1014,6 +1009,7 @@
 
 <br>
 
+<input id="colar"></input>
 <!-- ================================================== -->
 <!-- ================================================== -->
 <!-- ================================================== -->

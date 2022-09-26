@@ -140,7 +140,7 @@ body {
 #conteiner-buttons>button {
     width: 120px;
     height: 40px;
-    margin-top: 25px;
+    margin-left: 3rem;
     border-radius: 5px;
     color: #fff;
     font-weight: 500;
@@ -174,12 +174,11 @@ textarea {
     color: rgb(71, 71, 71);
     padding: 10px 10px;
     overflow: hidden;
-    /* border: 1px solid red; */
 }
 
 #observacoes, #conteiner-buttons {
     width: 96%;
-    margin: 10px auto;
+    margin: 1rem auto;
 }
 
 /* Área de impressão */
@@ -537,6 +536,10 @@ ul li p {
     width: 100px;
 }
 
+#colar {
+    position: absolute;
+    margin-left: -100vw;
+}
 
 #catalogo-logo {
     width: 100px;
@@ -544,7 +547,7 @@ ul li p {
 
 .divCheck { 
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     width: 100%;
     font-size: .65rem;
@@ -552,7 +555,7 @@ ul li p {
     border: 1px solid lightgray;
     border-radius: 3px;
     padding: 1.2px;
-    /* border: 1px solid red; */
+    position: relative;
 }
 
 .divCheck div {
@@ -561,6 +564,16 @@ ul li p {
 
 .divCheck div:nth-child(2) {
     margin-right: 10px;
+}
+
+.divCheck div:nth-child(3) {
+    position: absolute;
+    right: 0.5rem;
+}
+
+.divCheck div:nth-child(3) img {
+    width: 15px;
+    cursor: pointer;
 }
 
 .divCheck input {
@@ -598,4 +611,14 @@ ul li p {
     margin-top: .3rem;
     cursor: pointer;
     color: #0D6EFD;
+}
+
+#copyIcon {
+    width: 15px;
+    margin-right: 1rem;
+}
+
+.div-didaticos {
+    /* border: 1px solid red; */
+    margin-left: 2rem;
 }

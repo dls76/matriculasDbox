@@ -1,12 +1,13 @@
 // Informa se o aluno 1 tem laudo ou necessita atendimento especial
 temLaudo = () => {
     let checkBox = document.getElementById("checkLaudo1");
-    if ( checkBox.checked == true) {
+    if (checkBox.checked == true) {
         document.getElementById('parceria1').value = "";
         document.getElementById('parceria1').readOnly = true;
         document.getElementById("desconto1").readOnly = true;
         document.getElementById("desconto1").style.color = "lightGray";
         document.getElementById("desconto1").value = 0;
+        document.getElementById('checkDidaticos1').checked = false;
         calculaMensalidade1()
     } else {
         checkBox.checked = false; 
@@ -26,6 +27,7 @@ temLaudo2 = () => {
         document.getElementById("desconto2").readOnly = true;
         document.getElementById("desconto2").style.color = "lightGray";
         document.getElementById("desconto2").value = 0;
+        document.getElementById('checkDidaticos2').checked = false;
         calculaMensalidade2()
     } else {
         checkBox.checked = false; 
@@ -45,6 +47,8 @@ temLaudo3 = () => {
         document.getElementById("desconto3").readOnly = true;
         document.getElementById("desconto3").style.color = "lightGray";
         document.getElementById("desconto3").value = 0;
+        document.getElementById('checkDidaticos3').checked = false;
+
         calculaMensalidade3()
     } else {
         checkBox.checked = false; 
@@ -64,6 +68,7 @@ temLaudo4 = () => {
         document.getElementById("desconto4").readOnly = true;
         document.getElementById("desconto4").style.color = "lightGray";
         document.getElementById("desconto4").value = 0;
+        document.getElementById('checkDidaticos4').checked = false;
         calculaMensalidade4()
     } else {
         checkBox.checked = false; 
@@ -304,7 +309,6 @@ function exibeDidaticos() {
       text.style.display = "none";
     }
 }
-
 // Exibe opção de pagamento na área de impressão
 function myFunctionPg() {
     // Get the buttons
@@ -330,7 +334,6 @@ function myFunctionPg() {
         textPg.innerHTML = btn4.value
     }
 }
-
 // Gera arquivo em PDF com todas as informações da negociação
 function gerarPDF() {
 
@@ -483,7 +486,6 @@ function gerarPDF() {
 
     dataHoje()
 }
-
 // Exibe a data e hora atual e o contato do atendente
 function dataHoje() {
     const d = new Date();
@@ -508,6 +510,7 @@ incluirDidaticos1 = () => {
         document.getElementById("desconto1").readOnly = true;
         document.getElementById("desconto1").style.color = "lightGray";
         document.getElementById("desconto1").value = 0;
+        document.getElementById('checkLaudo1').checked = false;
         calculaMensalidade1()
     } else {
         checkBox.checked = false; 
@@ -527,6 +530,7 @@ incluirDidaticos2 = () => {
         document.getElementById("desconto2").readOnly = true;
         document.getElementById("desconto2").style.color = "lightGray";
         document.getElementById("desconto2").value = 0;
+        document.getElementById('checkLaudo2').checked = false;
         calculaMensalidade2()
     } else {
         checkBox2.checked = false; 
@@ -546,6 +550,7 @@ incluirDidaticos3 = () => {
         document.getElementById("desconto3").readOnly = true;
         document.getElementById("desconto3").style.color = "lightGray";
         document.getElementById("desconto3").value = 0;
+        document.getElementById('checkLaudo3').checked = false;
         calculaMensalidade3()
     } else {
         checkBox3.checked = false; 
@@ -565,6 +570,7 @@ incluirDidaticos4 = () => {
         document.getElementById("desconto4").readOnly = true;
         document.getElementById("desconto4").style.color = "lightGray";
         document.getElementById("desconto4").value = 0;
+        document.getElementById('checkLaudo4').checked = false;
         calculaMensalidade4()
     } else {
         checkBox4.checked = false; 
@@ -584,3 +590,45 @@ function toggleUniformes() {document.getElementById("popupUniformes").classList.
 function toggleCantina() {document.getElementById("popupCantina").classList.toggle("active")}
 function toggleTransporte() {document.getElementById("popupTransporte").classList.toggle("active")}
 function toggleDocumentos() {document.getElementById("popupDocumentos").classList.toggle("active")}
+
+
+// Copiar dados para colar no ACRM
+
+function copiarDados() {
+
+    // ALUNO 1 - nome, desconto, parcelas, mensalidade final, laudo
+    let n1 = document.getElementById('txtNome1')
+    let d1 = document.getElementById('desconto1')
+    let p1 = document.getElementById('parcelas1')
+    let m1 = document.getElementById('valorFinal1')
+    let l1 = ""; if (document.getElementById('checkLaudo1').checked == true) {l1 = " - laudo/suspeita"} else {l1 = " - sem laudo/suspeita"}
+    let dt1 = ""; if (document.getElementById('checkDidaticos1').checked == true) {dt1 = " - didáticos inclusos"} else {dt1 = " - sem didáticos"}
+    let taxa1 = document.getElementById('taxa')
+    let obs1 = document.getElementById('input-obs')
+    let colagem1 = document.getElementById('colar')
+
+    colagem1.value = n1.value + ' (' + d1.value + '%) - ' + p1.value + 'x R$ ' + m1.value + ' ' + l1 + ' ' + dt1 + ' - Taxa: R$ '+ taxa1.value + ',00' + ' ' + obs1.value
+
+    colagem1.select()
+    document.execCommand("copy");
+    
+}
+
+/* function copiarDados2() {
+
+    //ALUNO 2 - nome, desconto, parcelas, mensalidade final, laudo
+    let n2 = document.getElementById('txtNome2')
+    let d2 = document.getElementById('desconto2')
+    let p2 = document.getElementById('parcelas2')
+    let m2 = document.getElementById('valorFinal2')
+    let l2 = ""; if (document.getElementById('checkLaudo2').checked == true) {l2 = " - laudo/suspeita"} else {l2 = " - sem laudo/suspeita"}
+    let dt2 = ""; if (document.getElementById('checkDidaticos2').checked == true) {dt = " - didáticos inclusos"} else {dt = " - sem didáticos"}
+    let taxa2 = document.getElementById('taxa')
+    let obs2 = document.getElementById('input-obs')
+    let colagem2 = document.getElementById('colar')
+    
+    colagem2.value = n2.value + ' (' + d2.value + '%) - ' + p2.value + 'x R$ ' + m2.value + ' ' + l2 + ' ' + dt2 + ' - Taxa: R$ '+ taxa2.value + ',00' + ' ' + obs2.value
+
+    colagem2.select()
+    document.execCommand("copy");
+}*/ 
