@@ -596,39 +596,64 @@ function toggleDocumentos() {document.getElementById("popupDocumentos").classLis
 
 function copiarDados() {
 
-    // ALUNO 1 - nome, desconto, parcelas, mensalidade final, laudo
+ 
+    let taxa1 = document.getElementById('taxa')
+    let obs1 = document.getElementById('input-obs')
+    let colagem1 = document.getElementById('colar')
+
+
     let n1 = document.getElementById('txtNome1')
+    let s1 = document.getElementById('serie1')
     let d1 = document.getElementById('desconto1')
     let p1 = document.getElementById('parcelas1')
     let m1 = document.getElementById('valorFinal1')
     let l1 = ""; if (document.getElementById('checkLaudo1').checked == true) {l1 = " - laudo/suspeita"} else {l1 = " - sem laudo/suspeita"}
     let dt1 = ""; if (document.getElementById('checkDidaticos1').checked == true) {dt1 = " - didáticos inclusos"} else {dt1 = " - sem didáticos"}
-    let taxa1 = document.getElementById('taxa')
-    let obs1 = document.getElementById('input-obs')
-    let colagem1 = document.getElementById('colar')
 
-    colagem1.value = n1.value + ' (' + d1.value + '%) - ' + p1.value + 'x R$ ' + m1.value + ' ' + l1 + ' ' + dt1 + ' - Taxa: R$ '+ taxa1.value + ',00' + ' ' + obs1.value
-
-    colagem1.select()
-    document.execCommand("copy");
-    
-}
-
-/* function copiarDados2() {
-
-    //ALUNO 2 - nome, desconto, parcelas, mensalidade final, laudo
     let n2 = document.getElementById('txtNome2')
+    let s2 = document.getElementById('serie2')
     let d2 = document.getElementById('desconto2')
     let p2 = document.getElementById('parcelas2')
     let m2 = document.getElementById('valorFinal2')
     let l2 = ""; if (document.getElementById('checkLaudo2').checked == true) {l2 = " - laudo/suspeita"} else {l2 = " - sem laudo/suspeita"}
-    let dt2 = ""; if (document.getElementById('checkDidaticos2').checked == true) {dt = " - didáticos inclusos"} else {dt = " - sem didáticos"}
-    let taxa2 = document.getElementById('taxa')
-    let obs2 = document.getElementById('input-obs')
-    let colagem2 = document.getElementById('colar')
+    let dt2 = ""; if (document.getElementById('checkDidaticos2').checked == true) {dt2 = " - didáticos inclusos"} else {dt2 = " - sem didáticos"}
     
-    colagem2.value = n2.value + ' (' + d2.value + '%) - ' + p2.value + 'x R$ ' + m2.value + ' ' + l2 + ' ' + dt2 + ' - Taxa: R$ '+ taxa2.value + ',00' + ' ' + obs2.value
+    let n3 = document.getElementById('txtNome3')
+    let s3 = document.getElementById('serie3')
+    let d3 = document.getElementById('desconto3')
+    let p3 = document.getElementById('parcelas3')
+    let m3 = document.getElementById('valorFinal3')
+    let l3 = ""; if (document.getElementById('checkLaudo3').checked == true) {l3 = " - laudo/suspeita"} else {l3 = " - sem laudo/suspeita"}
+    let dt3 = ""; if (document.getElementById('checkDidaticos3').checked == true) {dt3 = " - didáticos inclusos"} else {dt3 = " - sem didáticos"}
+    
+    let n4 = document.getElementById('txtNome4')
+    let s4 = document.getElementById('serie4')
+    let d4 = document.getElementById('desconto4')
+    let p4 = document.getElementById('parcelas4')
+    let m4 = document.getElementById('valorFinal4')
+    let l4 = ""; if (document.getElementById('checkLaudo4').checked == true) {l4 = " - laudo/suspeita"} else {l4 = " - sem laudo/suspeita"}
+    let dt4 = ""; if (document.getElementById('checkDidaticos4').checked == true) {dt4 = " - didáticos inclusos"} else {dt4 = " - sem didáticos"}
 
-    colagem2.select()
+
+let textoColagem = '1) ' + n1.value + ' (' + d1.value + '%) - ' + p1.value + 'x R$ ' + m1.value + ' ' + l1 + ' ' + dt1 + ' - Taxa: R$ '+ taxa1.value + ',00' + ' ' + obs1.value
+
+
+if (s1.value !== '0.0' && s2.value == '0.0') { 
+
+    textoColagem
+
+} else if (s1.value != '0.0' && s2.value != '0.0' && s3.value == '0.0') {
+
+    textoColagem += ' 2) ' + n2.value + ' (' + d2.value + '%) - ' + p2.value + 'x R$ ' + m2.value + ' ' + l2 + ' ' + dt2 + ' - Taxa: R$ '+ taxa1.value + ',00' + ' ' + obs1.value
+
+} else if (s1.value != '0.0' && s2.value != '0.0' && s3.value != '0.0') {
+
+    textoColagem += ' 2) ' + n2.value + ' (' + d2.value + '%) - ' + p2.value + 'x R$ ' + m2.value + ' ' + l2 + ' ' + dt2 + ' ' + ' 3) ' + n3.value + ' (' + d3.value + '%) - ' + p3.value + 'x R$ ' + m3.value + ' ' + l3 + ' ' + dt3 + ' - Taxa: R$ '+ taxa1.value + ',00' + ' ' + obs1.value
+
+}
+
+    colagem1.value = textoColagem
+    colagem1.select()
     document.execCommand("copy");
-}*/ 
+
+}
