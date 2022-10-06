@@ -134,13 +134,13 @@ body {
 /* Botão imprimir */
 #conteiner-buttons {
    display: flex;
-   justify-content: flex-end;
+   justify-content: space-between;
 }
   
 #conteiner-buttons>button {
     width: 120px;
     height: 40px;
-    margin-left: 3rem;
+    /* margin-left: 2rem; */
     border-radius: 5px;
     color: #fff;
     font-weight: 500;
