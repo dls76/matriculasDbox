@@ -595,12 +595,10 @@ function toggleDocumentos() {document.getElementById("popupDocumentos").classLis
 // Copiar dados para colar no ACRM
 
 function copiarDados() {
-
  
     let taxa1 = document.getElementById('taxa')
     let obs1 = document.getElementById('input-obs')
     let colagem1 = document.getElementById('colar')
-
 
     let n1 = document.getElementById('txtNome1')
     let s1 = document.getElementById('serie1')
@@ -635,20 +633,20 @@ function copiarDados() {
     let dt4 = ""; if (document.getElementById('checkDidaticos4').checked == true) {dt4 = " - didáticos inclusos"} else {dt4 = " - sem didáticos"}
 
 
-let textoColagem = '1) ' + n1.value + ' (' + d1.value + '%) - ' + p1.value + 'x R$ ' + m1.value + ' ' + l1 + ' ' + dt1 + ' - Taxa: R$ '+ taxa1.value + ',00' + ' ' + obs1.value
-
+let textoColagem = '1) ' + n1.value + ' (' + d1.value + '%) - ' + p1.value + 'x R$ ' + m1.value + ' ' + l1 + ' ' + dt1 + ' - Taxa: R$ '+ taxa1.value + ',00'
+let textoObs = obs1.value
 
 if (s1.value !== '0.0' && s2.value == '0.0') { 
 
-    textoColagem
+    textoColagem += textoObs
 
 } else if (s1.value != '0.0' && s2.value != '0.0' && s3.value == '0.0') {
 
-    textoColagem += ' 2) ' + n2.value + ' (' + d2.value + '%) - ' + p2.value + 'x R$ ' + m2.value + ' ' + l2 + ' ' + dt2 + ' - Taxa: R$ '+ taxa1.value + ',00' + ' ' + obs1.value
+    textoColagem += ' 2) ' + n2.value + ' (' + d2.value + '%) - ' + p2.value + 'x R$ ' + m2.value + ' ' + l2 + ' ' + dt2 + ' - Taxa: R$ '+ taxa1.value + ',00' + ' ' + textoObs
 
 } else if (s1.value != '0.0' && s2.value != '0.0' && s3.value != '0.0') {
 
-    textoColagem += ' 2) ' + n2.value + ' (' + d2.value + '%) - ' + p2.value + 'x R$ ' + m2.value + ' ' + l2 + ' ' + dt2 + ' ' + ' 3) ' + n3.value + ' (' + d3.value + '%) - ' + p3.value + 'x R$ ' + m3.value + ' ' + l3 + ' ' + dt3 + ' - Taxa: R$ '+ taxa1.value + ',00' + ' ' + obs1.value
+    textoColagem += ' 2) ' + n2.value + ' (' + d2.value + '%) - ' + p2.value + 'x R$ ' + m2.value + ' ' + l2 + ' ' + dt2 + ' ' + ' 3) ' + n3.value + ' (' + d3.value + '%) - ' + p3.value + 'x R$ ' + m3.value + ' ' + l3 + ' ' + dt3 + ' - Taxa: R$ '+ taxa1.value + ',00' + ' ' + textoObs
 
 }
 
