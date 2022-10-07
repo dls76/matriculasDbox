@@ -644,9 +644,13 @@ if (s1.value !== '0.0' && s2.value == '0.0') {
 
     textoColagem += ' 2) ' + n2.value + ' (' + d2.value + '%) - ' + p2.value + 'x R$ ' + m2.value + ' ' + l2 + ' ' + dt2 + ' - Taxa: R$ '+ taxa1.value + ',00' + ' ' + textoObs
 
-} else if (s1.value != '0.0' && s2.value != '0.0' && s3.value != '0.0') {
+} else if (s1.value != '0.0' && s2.value != '0.0' && s3.value != '0.0' && s4.value == '0.0') {
 
     textoColagem += ' 2) ' + n2.value + ' (' + d2.value + '%) - ' + p2.value + 'x R$ ' + m2.value + ' ' + l2 + ' ' + dt2 + ' ' + ' 3) ' + n3.value + ' (' + d3.value + '%) - ' + p3.value + 'x R$ ' + m3.value + ' ' + l3 + ' ' + dt3 + ' - Taxa: R$ '+ taxa1.value + ',00' + ' ' + textoObs
+
+} else if (s1.value != '0.0' && s2.value != '0.0' && s3.value != '0.0' && s4.value != '0.00') {
+ 
+    textoColagem += ' 2) ' + n2.value + ' (' + d2.value + '%) - ' + p2.value + 'x R$ ' + m2.value + ' ' + l2 + ' ' + dt2 + ' ' + ' 3) ' + n3.value + ' (' + d3.value + '%) - ' + p3.value + 'x R$ ' + m3.value + ' ' + l3 + ' ' + dt3 + ' - Taxa: R$ '+ taxa1.value + ',00' + ' ' + ' 4) ' + n4.value + ' (' + d4.value + '%) - ' + p4.value + 'x R$ ' + m4.value + ' ' + l4 + ' ' + dt4 + ' ' + textoObs
 
 }
 
