@@ -17,7 +17,6 @@ temLaudo = () => {
         calculaMensalidade1()
     }
 }
-
 // Informa se o aluno 2 tem laudo ou necessita atendimento especial
 temLaudo2 = () => {
     let checkBox = document.getElementById("checkLaudo2");
@@ -37,7 +36,6 @@ temLaudo2 = () => {
         calculaMensalidade2()
     }
 }
-
 // Informa se o aluno 3 tem laudo ou necessita atendimento especial
 temLaudo3 = () => {
     let checkBox = document.getElementById("checkLaudo3");
@@ -58,7 +56,6 @@ temLaudo3 = () => {
         calculaMensalidade3()
     }
 }
-
 // Informa se o aluno 4 tem laudo ou necessita atendimento especial
 temLaudo4 = () => {
     let checkBox = document.getElementById("checkLaudo4");
@@ -78,7 +75,6 @@ temLaudo4 = () => {
         calculaMensalidade4()
     }
 }
-
 // Funções que calculam as mensalidades
 function calculaMensalidade1() {
 
@@ -176,7 +172,6 @@ function calculaMensalidade4() {
     somarValorFinal()
     mostraResumo4()
 }
-
 // FUNÇÕES QUE MOSTRAM OS DADOS À DIREITA - NA TABELA RESUMO
 function mostraResumo1() {
     let nome = document.getElementById('txtNome1').value
@@ -258,9 +253,9 @@ function mostraResumo4() {
     // document.getElementById('dano4').value = parseFloat(dAno4).toFixed(2)
 
 }
-
 // FUNÇÃO QUE SOMA O VALOR FINAL
 function somarValorFinal() {
+    
     let v1 = document.getElementById('serie1').value
     if (v1 === "") {v1 = 0}
     let va1 = document.getElementById('valorFinal1').value
@@ -282,10 +277,11 @@ function somarValorFinal() {
     if (va4 === "") {va4 = 0} 
 
     let totalIntegral = parseFloat(v1)+parseFloat(v2)+parseFloat(v3)+parseFloat(v4)
-    let somatorio = parseFloat(va1) + parseFloat(va2) + parseFloat(va3) + parseFloat(va4)
     let descontoMes = parseFloat(v1-va1) + parseFloat(v2-va2) + parseFloat(v3-va3) + parseFloat(v4-va4)
     let descontoAno = descontoMes*12
+    let somatorio = parseFloat(va1) + parseFloat(va2) + parseFloat(va3) + parseFloat(va4)
 
+    // Área de totais
     document.getElementById('somaIntegral').innerHTML = totalIntegral.toFixed(2)
     document.getElementById('dMes').innerHTML = descontoMes.toFixed(2)
     document.getElementById('dAno').innerHTML = descontoAno.toFixed(2)
@@ -294,7 +290,6 @@ function somarValorFinal() {
     
     return somatorio
 }
-
 // Exibe didáticos inclusos na área de impressão
 function exibeDidaticos() {
     // Get the checkbox
@@ -344,6 +339,7 @@ function gerarPDF() {
     document.getElementById('resp-e-contato').innerHTML = "Responsável: " + resp + " (" + contato + ")"
 
     const dados = document.getElementById('proposta_resumo')
+
     let aluno1 = document.getElementById('txtNome1')
     let aluno2 = document.getElementById('txtNome2')
     let aluno3 = document.getElementById('txtNome3')
@@ -386,7 +382,6 @@ function gerarPDF() {
             document.getElementById('didaticos1').innerHTML = ''
         }
     }
-
     if ( didat2.checked == true ) {
         document.getElementById('didaticos2').innerHTML = 'Inclusos'
     } else {
@@ -396,7 +391,6 @@ function gerarPDF() {
             document.getElementById('didaticos2').innerHTML = ''
         }
     }
-
     if (didat3.checked == true ) {
         document.getElementById('didaticos3').innerHTML = 'Inclusos'
     } else {
@@ -406,7 +400,6 @@ function gerarPDF() {
             document.getElementById('didaticos3').innerHTML = ''
         }
     }
-
     if ( didat4.checked == true ) {
         document.getElementById('didaticos4').innerHTML = 'Inclusos'
     } else {
@@ -417,7 +410,7 @@ function gerarPDF() {
         }
     }
 
-    let somatoria = document.getElementById('divSomaTotal')
+    let somatorio = document.getElementById('divSomaTotal').innerText
 
     document.getElementById('aluno1').innerText = aluno1.value
     document.getElementById('aluno2').innerText = aluno2.value
@@ -455,8 +448,9 @@ function gerarPDF() {
     document.getElementById('val2').innerHTML = valor2.value
     document.getElementById('val3').innerHTML = valor3.value
     document.getElementById('val4').innerHTML = valor4.value
+    // document.getElementById('totalFinal').innerHTML = somatoria.innerText
+    document.getElementById('totalFinal').innerHTML = somatorio
 
-    document.getElementById('totalFinal').innerHTML = somatoria.innerText
     let taxa = document.getElementById('taxa').value
     document.getElementById('taxa-valor').innerHTML = parseFloat(taxa).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})
 
@@ -464,28 +458,35 @@ function gerarPDF() {
     document.getElementById('nome-atendente').innerHTML = "Atendente <br>" + atendente
 
     let obs = document.getElementById('input-obs').value
-
-    if (obs !== "") {
-        document.getElementById('observacoes-text-area').style.display = "block"
-    } else {
-        document.getElementById('observacoes-text-area').style.display = "none"
-    }
-
+    if (obs !== "") {document.getElementById('observacoes-text-area').style.display = "block"} else {document.getElementById('observacoes-text-area').style.display = "none"}
     document.getElementById('obs-print').innerHTML = obs
 
-    console.log('Gerar PDF')
+    // console.log('Gerar PDF')
+    var alunos = `${aluno1.value}`
 
-    try {
-        html2pdf()
+    if(aluno2.value !== "" && aluno3.value == "" && aluno4.value == "") {
+        alunos += `_${aluno2.value}`
+    } else if(aluno2.value !== "" && aluno3.value !== "" && aluno4.value == "") { 
+        alunos += `_${aluno2.value}_${aluno3.value}`
+    } else if (aluno2.value !== "" && aluno3.value !== "" && aluno4.value !== "") {
+        alunos += `_${aluno2.value}_${aluno3.value}_${aluno4.value}`
+    }
+        
+    var options = {filename: alunos}
+    
+    //try {
+        html2pdf(dados, options)
             .from(dados)
             .save()
-    }
-    catch (e) {
-        console.error(e)        
-    }
+            
+    //}
+    //catch (e) {
+        // console.error(e)        
+    //}
 
     dataHoje()
 }
+
 // Exibe a data e hora atual e o contato do atendente
 function dataHoje() {
     const d = new Date();
@@ -498,7 +499,6 @@ function dataHoje() {
     document.getElementById("dataAtual").innerHTML = 
     days[d.getDay()] + `, ` + date + ` de ` + months[d.getMonth()] + ` de ` + year + " - " + hora + ":" + min + ".";
 }
-
 // Incluir Didáticos (zerar desconto e parceria)
 incluirDidaticos1 = () => {
     
@@ -590,10 +590,7 @@ function toggleUniformes() {document.getElementById("popupUniformes").classList.
 function toggleCantina() {document.getElementById("popupCantina").classList.toggle("active")}
 function toggleTransporte() {document.getElementById("popupTransporte").classList.toggle("active")}
 function toggleDocumentos() {document.getElementById("popupDocumentos").classList.toggle("active")}
-
-
 // Copiar dados para colar no ACRM
-
 function copiarDados() {
  
     let taxa1 = document.getElementById('taxa')
