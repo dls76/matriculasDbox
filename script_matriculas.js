@@ -253,6 +253,7 @@ function mostraResumo4() {
     // document.getElementById('dano4').value = parseFloat(dAno4).toFixed(2)
 
 }
+
 // FUNÇÃO QUE SOMA O VALOR FINAL
 function somarValorFinal() {
     
@@ -286,9 +287,10 @@ function somarValorFinal() {
     document.getElementById('dMes').innerHTML = descontoMes.toFixed(2)
     document.getElementById('dAno').innerHTML = descontoAno.toFixed(2)
     document.getElementById('divSomaTotal').innerHTML = somatorio.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})
-    document.getElementById('somaTotal').innerHTML = somatorio.toFixed(2)
+    document.getElementById('somaTotal').innerHTML = somatorio
+    // .toFixed(2)
     
-    return somatorio
+    // return somatorio
 }
 // Exibe didáticos inclusos na área de impressão
 function exibeDidaticos() {
@@ -590,12 +592,15 @@ function toggleUniformes() {document.getElementById("popupUniformes").classList.
 function toggleCantina() {document.getElementById("popupCantina").classList.toggle("active")}
 function toggleTransporte() {document.getElementById("popupTransporte").classList.toggle("active")}
 function toggleDocumentos() {document.getElementById("popupDocumentos").classList.toggle("active")}
+
+
 // Copiar dados para colar no ACRM
 function copiarDados() {
  
     let taxa1 = document.getElementById('taxa')
     let obs1 = document.getElementById('input-obs')
     let colagem1 = document.getElementById('colar')
+    let btcopiar = document.querySelector('#bt-copiarAcrm')
 
     let n1 = document.getElementById('txtNome1')
     let s1 = document.getElementById('serie1')
@@ -655,4 +660,13 @@ if (s1.value !== '0.0' && s2.value == '0.0') {
     colagem1.select()
     document.execCommand("copy");
 
+    btcopiar.innerText = "Copiado!"
+    btcopiar.style.backgroundColor = "dodgerblue"
+    setTimeout(reverterTextoCopiado, 1000)
+}
+
+function reverterTextoCopiado() {
+    let btcopiar = document.querySelector('#bt-copiarAcrm')
+    btcopiar.innerHTML = 'Copiar'
+    btcopiar.style.backgroundColor = '#5C636A'
 }

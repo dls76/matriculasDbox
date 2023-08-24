@@ -24,11 +24,12 @@
 <div id="conteiner">
     <!-- CONTEINER ESQUERDA -->
     <div id="esquerda">
-        <nav class="navbar navbar-dark bg-primary">
+        <nav class="navbar navbar-dark bg-primary ">
+
             <div class="lh-100">
-                <h6 class="mb-0 text-white lh-100">Colégio Adventista Centenário</h6>
-                <!-- <small class="text-white">Muito Além do Ensino - Matrículas 2021</small> -->
+                <h6 class="mb-0 text-white lh-100">Colégio Adventista Centenário - Novo Atendimento</h6>   
             </div>
+
         </nav>
 
         
@@ -1181,7 +1182,7 @@
                 <div class="conteinerForm" id="conteinerFormTotal">
 
                         <div id="labelTotal">TOTAL</div>
-                        <div id="divSomaTotal">R$ 0,00</div>
+                        <div id="divSomaTotal"></div>
 
                 </div>
             </form>
@@ -1259,7 +1260,7 @@
 
             <!-- Opções de pagamento -->
             
-            <table id="tabela-opcoes-pg">
+            <!-- <table id="tabela-opcoes-pg">
                 
                 <tr>
                     <td>
@@ -1279,10 +1280,10 @@
                         <label for="vistaCredito">À vista crédito</label>
                     </td>
                 </tr>
-            </table>
+            </table> -->
 
     <!-- Botões de informações adicionais -->
-    <div id="conteiner-btns-esquerda">
+    <!-- <div id="conteiner-btns-esquerda">
         <button id="btn-ct" class="btn btn-primary" onclick="toggleCT()">Contraturno</button>
         <button id="btn-taxa" class="btn btn-primary" onclick="toggleInclusao()">Inclusão</button>
         <button id="btn-materiais" class="btn btn-primary" onclick="toggleMateriais()">Materiais</button>
@@ -1290,32 +1291,30 @@
         <button id="btn-cantina" class="btn btn-primary" onclick="toggleCantina()">Cantina</button>
         <button id="btn-transporte" class="btn btn-primary" onclick="toggleTransporte()">Transporte</button>
         <button id="btn-documentos" class="btn btn-primary" onclick="toggleDocumentos()">Documentos</button>
-    </div>  
+    </div>   -->
 
 
-<div class="container-didaticos-taxa">
+        <div class="container-didaticos-taxa">
 
-    <!-- Taxa -->
-    <div id="taxa-eventos">
-        <label for="taxa">Taxa</label>
-        <input id="taxa" type="text" value="560" class="form-control form-control-sm valor">
-        <img src="imagens/calendar.jpg" alt="" id="calendar-icon" onclick="toggleTaxa()">
-        
-    </div>
+            <!-- Taxa -->
+            <div id="taxa-eventos">
+                <label for="taxa">Taxa</label>
+                <input id="taxa" type="text" value="560" class="form-control form-control-sm valor">
+                <img src="imagens/calendar.jpg" alt="" id="calendar-icon" onclick="toggleTaxa()">
+            </div>
 
-     <!-- Atendentes -->
-     <div class="conteiner-atendentes">
-        <select class="form-select form-select-sm" aria-label="Default select example" id="select-atendentes">
-            <option selected value="">Atendente</option>
-            <option value="Alexandro - alexandro.gaspar@educadventista.org.br">Alexandro</option>
-            <option value="Daisy - @educadventista.org.br">Daisy</option>
-            <option value="Douglas - douglas.santos@educadventista.org.br">Douglas</option>
-            <option value="Josiane - josiane.vieira@educadventista.org.br">Josiane</option>
-            
-          </select>
-    </div>
+            <!-- Atendentes -->
+            <div class="conteiner-atendentes">
+                <select class="form-select form-select-sm" aria-label="Default select example" id="select-atendentes">
+                    <option selected value="">Atendente</option>
+                    <option value="Alexandro - alexandro.gaspar@educadventista.org.br">Alexandro</option>
+                    <option value="Daisy - daisy.ferreira@educadventista.org.br@educadventista.org.br">Daisy</option>
+                    <option value="Douglas - douglas.santos@educadventista.org.br">Douglas</option>
+                    <option value="Josiane - josiane.vieira@educadventista.org.br">Josiane</option>
+                </select>
+            </div>
 
-</div>
+        </div>
 
     
         <!-- Campo para Observações -->
@@ -1326,8 +1325,10 @@
 
         <!-- Conteiner Botão Imprimir -->
         <div id="conteiner-buttons">
-            <button class="btn btn-secondary"  onclick="copiarDados()">Copiar</button>
-            <button id="btn-imprimir" class="btn btn-primary"  onclick="gerarPDF()">Imprimir</button>
+            
+            <button id="bt-copiarAcrm" class="btn btn-secondary"  onclick="copiarDados()">Copiar</button>
+            <button class="btn btn-primary"  onclick="gerarPDF()">Imprimir</button>
+            <button class="btn btn-success"  onclick="sendDataToClientWhatsApp()">WhatsApp</button>
 
         </div>
         
@@ -1425,7 +1426,8 @@
         <!-- Livros, materiais e uniformes -->
         <div class="adicionais footer-item" id="footer-item-obs">
             <div class="title-item">LIVROS, MATERIAIS E UNIFORMES</div>
-            <div class="content-item-obs" id="last-child-obs">Acesse todas as informações através do link da nossa loja, Novo Tempo Store: https://linktr.ee/novotempostoreasp.
+            <div class="content-item-obs" id="last-child-obs">Disponíveis na loja Novo Tempo Store. Acesse todas as informações através do link: <br>
+            <i>https://linktr.ee/novotempostoreasp</i>
             </div>
         </div>
 
@@ -1434,17 +1436,18 @@
 
             <div class="footer-item">
              <div class="title-item">TAXA DE EVENTOS</div>
-             <div class="content-item"><span id="taxa-valor"></span> por aluno no ato da matrícula - à vista ou até 6x no cartão. Cobre ações em datas especiais do calendário escolar (páscoa, mães, pais, etc.).</div>
+             <div class="content-item"><span id="taxa-valor"></span> por aluno no ato da matrícula. À vista ou até 6x no cartão. Cobre ações em datas especiais do calendário escolar (páscoa, mães, pais, etc.).</div>
             </div>
-           
+            
             <div class="footer-item">
              <div class="title-item">CANTINA</div>
-             <div class="content-item">Serviço terceirizado com supervisão de nutricionista. Formas de pagamento: à vista, créditos antecipados ou pelo aplicativo VLUPT. Até o 2º EF, opção de contrato mensal (incluso: 1 salgado, 1 doce, 1 suco, 1 fruta). Contato whatsapp: 41-99672-0012</div>
+             <div class="content-item">Serviço terceirizado com supervisão de nutricionista. Informações sobre as formas de pagamento, opções de lanches e outras, falar diretamente com a cantina pelo whatsapp: (41) 99611-7704</div>
             </div>
 
         </div>
 
         <!-- Contraturno -->
+        <!--
         <div class="adicionais footer-item" id="footer-item-ct">
 
             <div class="title-item">CONTRATURNO</div>
@@ -1498,8 +1501,10 @@
                 </tr>
             </table>
         </div>
+    -->
 
         <!-- Horários das aulas -->
+        <!-- 
         <div class="adicionais footer-item" id="footer-item-ct">
 
             <div class="title-item">HORÁRIOS DAS AULAS</div>
@@ -1511,6 +1516,7 @@
            <P>Item 5</P>
         </div>
     </div>
+    -->
 
     <!-- Observações -->
     <div class="adicionais footer-item" id="observacoes-text-area">
@@ -1796,5 +1802,6 @@
     </div>
 </div>
 
+    <script src="whatsapp.js"></script>
 </body>
 </html>
