@@ -75,6 +75,7 @@ temLaudo4 = () => {
         calculaMensalidade4()
     }
 }
+
 // Funções que calculam as mensalidades
 function calculaMensalidade1() {
 
@@ -172,6 +173,7 @@ function calculaMensalidade4() {
     somarValorFinal()
     mostraResumo4()
 }
+
 // FUNÇÕES QUE MOSTRAM OS DADOS À DIREITA - NA TABELA RESUMO
 function mostraResumo1() {
     let nome = document.getElementById('txtNome1').value
@@ -287,7 +289,7 @@ function somarValorFinal() {
     document.getElementById('dMes').innerHTML = descontoMes.toFixed(2)
     document.getElementById('dAno').innerHTML = descontoAno.toFixed(2)
     document.getElementById('divSomaTotal').innerHTML = somatorio.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})
-    document.getElementById('somaTotal').innerHTML = somatorio
+    document.getElementById('somaTotal').innerHTML = 'R$ ' + somatorio.toFixed(2)
     // .toFixed(2)
     
     // return somatorio
@@ -331,6 +333,7 @@ function myFunctionPg() {
         textPg.innerHTML = btn4.value
     }
 }
+
 // Gera arquivo em PDF com todas as informações da negociação
 function gerarPDF() {
 
@@ -604,39 +607,44 @@ function copiarDados() {
 
     let n1 = document.getElementById('txtNome1')
     let s1 = document.getElementById('serie1')
+    let serie1 = s1.options[s1.selectedIndex].text
     let d1 = document.getElementById('desconto1')
     let p1 = document.getElementById('parcelas1')
     let m1 = document.getElementById('valorFinal1')
-    let l1 = ""; if (document.getElementById('checkLaudo1').checked == true) {l1 = " - laudo/suspeita"} else {l1 = " - sem laudo/suspeita"}
-    let dt1 = ""; if (document.getElementById('checkDidaticos1').checked == true) {dt1 = " - didáticos inclusos"} else {dt1 = " - sem didáticos"}
+    let l1 = ""; if (document.getElementById('checkLaudo1').checked == true) {l1 = "laudo/suspeita"} else {l1 = "sem laudo/suspeita"}
+    let dt1 = ""; if (document.getElementById('checkDidaticos1').checked == true) {dt1 = "didáticos inclusos"} else {dt1 = "sem didáticos"}
 
     let n2 = document.getElementById('txtNome2')
     let s2 = document.getElementById('serie2')
+    let serie2 = s2.options[s2.selectedIndex].text
     let d2 = document.getElementById('desconto2')
     let p2 = document.getElementById('parcelas2')
     let m2 = document.getElementById('valorFinal2')
-    let l2 = ""; if (document.getElementById('checkLaudo2').checked == true) {l2 = " - laudo/suspeita"} else {l2 = " - sem laudo/suspeita"}
-    let dt2 = ""; if (document.getElementById('checkDidaticos2').checked == true) {dt2 = " - didáticos inclusos"} else {dt2 = " - sem didáticos"}
+    let l2 = ""; if (document.getElementById('checkLaudo2').checked == true) {l2 = ", laudo/suspeita"} else {l2 = ", sem laudo/suspeita"}
+    let dt2 = ""; if (document.getElementById('checkDidaticos2').checked == true) {dt2 = ", didáticos inclusos"} else {dt2 = ", sem didáticos"}
     
     let n3 = document.getElementById('txtNome3')
     let s3 = document.getElementById('serie3')
+    let serie3 = s3.options[s3.selectedIndex].text
     let d3 = document.getElementById('desconto3')
     let p3 = document.getElementById('parcelas3')
     let m3 = document.getElementById('valorFinal3')
-    let l3 = ""; if (document.getElementById('checkLaudo3').checked == true) {l3 = " - laudo/suspeita"} else {l3 = " - sem laudo/suspeita"}
-    let dt3 = ""; if (document.getElementById('checkDidaticos3').checked == true) {dt3 = " - didáticos inclusos"} else {dt3 = " - sem didáticos"}
+    let l3 = ""; if (document.getElementById('checkLaudo3').checked == true) {l3 = ", laudo/suspeita"} else {l3 = ", sem laudo/suspeita"}
+    let dt3 = ""; if (document.getElementById('checkDidaticos3').checked == true) {dt3 = ", didáticos inclusos"} else {dt3 = ", sem didáticos"}
     
     let n4 = document.getElementById('txtNome4')
     let s4 = document.getElementById('serie4')
+    let serie4 = s4.options[s4.selectedIndex].text
     let d4 = document.getElementById('desconto4')
     let p4 = document.getElementById('parcelas4')
     let m4 = document.getElementById('valorFinal4')
-    let l4 = ""; if (document.getElementById('checkLaudo4').checked == true) {l4 = " - laudo/suspeita"} else {l4 = " - sem laudo/suspeita"}
-    let dt4 = ""; if (document.getElementById('checkDidaticos4').checked == true) {dt4 = " - didáticos inclusos"} else {dt4 = " - sem didáticos"}
+    let l4 = ""; if (document.getElementById('checkLaudo4').checked == true) {l4 = ", laudo/suspeita"} else {l4 = ", sem laudo/suspeita"}
+    let dt4 = ""; if (document.getElementById('checkDidaticos4').checked == true) {dt4 = ", didáticos inclusos"} else {dt4 = ", sem didáticos"}
 
 
-let textoColagem = '1) ' + n1.value + ' (' + d1.value + '%) - ' + p1.value + 'x R$ ' + m1.value + ' ' + l1 + ' ' + dt1 + ' - Taxa: R$ '+ taxa1.value + ',00'
-let textoObs = obs1.value
+let textoColagem = 'Aluno 1) ' + n1.value + ', ' + serie1 + ', ' + p1.value + ' x R$ ' + m1.value + ', ' + d1.value + '%, ' + l1 + ', ' + dt1 + ', taxa R$ '+ taxa1.value + ',00.'
+
+let textoObs = obs1.value+"\n"
 
 if (s1.value !== '0.0' && s2.value == '0.0') { 
 
@@ -644,15 +652,15 @@ if (s1.value !== '0.0' && s2.value == '0.0') {
 
 } else if (s1.value != '0.0' && s2.value != '0.0' && s3.value == '0.0') {
 
-    textoColagem += ' 2) ' + n2.value + ' (' + d2.value + '%) - ' + p2.value + 'x R$ ' + m2.value + ' ' + l2 + ' ' + dt2 + ' - Taxa: R$ '+ taxa1.value + ',00' + ' ' + textoObs
+    textoColagem += ' Aluno 2) ' + n2.value + ' (' + d2.value + '%) - ' + p2.value + 'x R$ ' + m2.value + ' ' + l2 + ' ' + dt2 + ' - Taxa: R$ '+ taxa1.value + ',00.' + ' ' + textoObs
 
 } else if (s1.value != '0.0' && s2.value != '0.0' && s3.value != '0.0' && s4.value == '0.0') {
 
-    textoColagem += ' 2) ' + n2.value + ' (' + d2.value + '%) - ' + p2.value + 'x R$ ' + m2.value + ' ' + l2 + ' ' + dt2 + ' ' + ' 3) ' + n3.value + ' (' + d3.value + '%) - ' + p3.value + 'x R$ ' + m3.value + ' ' + l3 + ' ' + dt3 + ' - Taxa: R$ '+ taxa1.value + ',00' + ' ' + textoObs
+    textoColagem += ' Aluno 2) ' + n2.value + ' (' + d2.value + '%) - ' + p2.value + 'x R$ ' + m2.value + ' ' + l2 + ' ' + dt2 + ' ' + ' Aluno 3) ' + n3.value + ' (' + d3.value + '%) - ' + p3.value + 'x R$ ' + m3.value + ' ' + l3 + ' ' + dt3 + ' - Taxa: R$ '+ taxa1.value + ',00.' + ' ' + textoObs
 
 } else if (s1.value != '0.0' && s2.value != '0.0' && s3.value != '0.0' && s4.value != '0.00') {
  
-    textoColagem += ' 2) ' + n2.value + ' (' + d2.value + '%) - ' + p2.value + 'x R$ ' + m2.value + ' ' + l2 + ' ' + dt2 + ' ' + ' 3) ' + n3.value + ' (' + d3.value + '%) - ' + p3.value + 'x R$ ' + m3.value + ' ' + l3 + ' ' + dt3 + ' - Taxa: R$ '+ taxa1.value + ',00' + ' ' + ' 4) ' + n4.value + ' (' + d4.value + '%) - ' + p4.value + 'x R$ ' + m4.value + ' ' + l4 + ' ' + dt4 + ' ' + textoObs
+    textoColagem += ' Aluno 2) ' + n2.value + ' (' + d2.value + '%) - ' + p2.value + 'x R$ ' + m2.value + ' ' + l2 + ' ' + dt2 + ' ' + ' Aluno 3) ' + n3.value + ' (' + d3.value + '%) - ' + p3.value + 'x R$ ' + m3.value + ' ' + l3 + ' ' + dt3 + ' - Taxa: R$ '+ taxa1.value + ',00.' + ' ' + ' Aluno 4) ' + n4.value + ' (' + d4.value + '%) - ' + p4.value + 'x R$ ' + m4.value + ' ' + l4 + ' ' + dt4 + ' ' + textoObs
 
 }
 

@@ -43,11 +43,10 @@ body {
     border-radius: 5px;
     background-color: #fff;
     padding: 6px;
-    /* box-shadow: 1px 1px 4px #c2c2c2; */
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 
-.conteiner/*:not(:first-of-type)*/ {
+.conteiner {
     border-left: 5px solid #0D6EFD;
 }
 
@@ -73,11 +72,9 @@ body {
 #conteinerFormTotal {
     background-color: #343A40;
     background-color: #fff;
-    /* background-color: red; */
     padding: 0;
     display: flex;
     justify-content: space-between;
-    /* visibility: hidden; */
 }
 
 #conteinerFormTotal div {
@@ -165,7 +162,6 @@ textarea {
     width: 96%;
     font-size: 12.5px;
     margin: 0 auto;
-    /* box-shadow: 1px 1px 4px #c2c2c2; */
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     border-radius: 0 0 5px 5px;
 }
@@ -585,18 +581,25 @@ ul li p {
     top: 4px;
 }
 
-#txtNome1, #txtNome2, #txtNome3, #txtNome4 {
+#txtNome1, #txtNome2, #txtNome3, #txtNome4, #input-melhor-contato {
     color: #0D6EFD;
     font-weight: 800;
 }
 
 #input-responsaveis {
     color: #0D6EFD;
-    width: 70%;
+    width: 65%;
+}
+
+#codigoddd {
+    width: 10%;
+    color: rgb(165, 165, 165);
+    text-align: center;
+    border: 1px solid #ced4da;
 }
 
 #input-melhor-contato {
-    width: 30%;
+    width: 25%;
     text-align: right;
 }
 
