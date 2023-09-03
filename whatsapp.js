@@ -102,7 +102,7 @@ function sendDataToClientWhatsApp() {
    '_- Manhã_%0a' +
    '7:15 às 11:40 (até 9º ano)%0a' +
    '7:15 às 12:30 (Ens. Médio)%0a' + 
-   '_ - Tarde_%0a' +
+   '_- Tarde_%0a' +
    '13:00 às 17:40%0a' +
    '13:00 às 16:40 (sexta-feira)%0a%0a' + 
    '*Nosso site*%0a' +
