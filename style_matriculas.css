@@ -16,9 +16,7 @@ body {
 
 #conteiner {
     width: 98vw;
-    height: 100vh;
-    margin: 0px auto;
-    padding-bottom: 30px;
+    margin: 0 auto;
     display: flex;
 }
 
@@ -26,11 +24,7 @@ body {
     flex: .9;
     background-color: #f8f8f8;
     background-color: #fff;
-    padding: 10px 0px;
-}
-
-#fPessoas {
-    padding: 6px 10px;
+    height: fit-content;
 }
 
 .conteiner {
@@ -42,13 +36,11 @@ body {
     border: 1px solid gainsboro;
     border-radius: 5px;
     background-color: #fff;
-    padding: 6px;
+    padding: .4rem;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-}
-
-.conteiner {
     border-left: 5px solid #0D6EFD;
 }
+
 
 .sub-conteiner {
     width: 100%;
@@ -75,6 +67,7 @@ body {
     padding: 0;
     display: flex;
     justify-content: space-between;
+    /* border: 1px solid red; */
 }
 
 #conteinerFormTotal div {
@@ -86,7 +79,7 @@ body {
 #direita {
     flex: 1;
     background-color: white;
-    padding: 10px 0;
+    /* padding: 10px 0; */
 }
 
  .nome::placeholder, .parcerias::placeholder {
@@ -619,4 +612,44 @@ ul li p {
 
 .div-didaticos {
     margin-left: 2rem;
+}
+
+.footerprincipal {
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(236, 236, 236);
+    height: 6rem;
+    margin-bottom: 10rem;
+}
+
+.footerprincipal a {
+    padding: 1rem;
+    color: gray;
+    text-decoration: none;
+    font-family: 'Roboto condensed', sans-serif;
+    font-size: .9rem;
+}
+
+.footerprincipal a:hover {
+    text-decoration: none;
+    color: #0D6EFD;
+}
+
+.bookicon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: none;
+}
+
+.bookicon, .didaticosvalorsemdesconto, .didaticosmenos40porcento {
+    padding-right: .3rem;
+}
+
+.didaticosvalorsemdesconto, .didaticosmenos40porcento {
+    width: 3rem;
+    text-align: right;
+    /* padding: .2rem; */
 }

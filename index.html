@@ -14,10 +14,14 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap" rel="stylesheet">
     <!-- <script src="https://raw.githack.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"></script> -->
     <script src="html2pdf.bundle.min.js"></script>
     <!-- <script src="html2pdf.bundle.js"></script> -->
     <script src="script_matriculas.js"></script>
+    <script src="https://kit.fontawesome.com/8abf0ff8b8.js" crossorigin="anonymous"></script>
 </head>
 <body>
     
@@ -27,11 +31,10 @@
         <nav class="navbar navbar-dark bg-primary ">
 
             <div class="lh-100">
-                <h6 class="mb-0 text-white lh-100">Colégio Adventista Centenário - Novo Atendimento</h6>   
+                <h6 class="mb-0 text-white lh-100">DBox - Atendimento</h6>   
             </div>
 
         </nav>
-
 
         <div id="fPessoas">
             <form id="form">    
@@ -327,17 +330,22 @@
                     <div class="divCheck">
                         <!-- Laudo aluno1 -->
                         <div>
-                            <label for="checkLaudo1">Laudo/Atendimento especial</label>
                             <input type="checkbox" name="" id="checkLaudo1" onclick="temLaudo()">
+                            <label for="checkLaudo1">Inclusão/hipótese</label>
                         </div>
                         <!-- Didáticos aluno1 -->
                         <div class="div-didaticos">
-                            <label for="checkDidaticos1">Incluir Didáticos</label>
                             <input type="checkbox" name="" id="checkDidaticos1" onclick="incluirDidaticos1()">
+                            <label for="checkDidaticos1">Incluir Didáticos</label>
                         </div>
-                        <!-- <div class="copiar">
-                            <img src="imagens/copy.png" alt="" onclick="copiarDados()">
-                        </div> -->
+                        <!-- valor dos livros 1 -->
+                        <div class="valordidaticos">
+                            <span class="bookicon" id="bookicon1">
+                                <i class="fa-solid fa-book"></i>
+                            </span>
+                            <span class="didaticosvalorsemdesconto" id="didaticosvalorsemdesconto1"></span>
+                            <span class="didaticosmenos40porcento" id="didaticosmenos40porcento1"></span>
+                        </div>
                     </div>
 
 
@@ -611,13 +619,21 @@
                     <div class="divCheck">
                         <!-- Laudo aluno2 -->
                         <div>
-                            <label for="checkLaudo2">Laudo/Atendimento especial</label>
                             <input type="checkbox" name="" id="checkLaudo2" onclick="temLaudo2()">
+                            <label for="checkLaudo2">Inclusão/hipótese</label>
                         </div>
                         <!-- Didáticos aluno2 -->
                         <div class="div-didaticos">
-                            <label for="checkDidaticos2">Incluir didáticos</label>
                             <input type="checkbox" name="" id="checkDidaticos2" onclick="incluirDidaticos2()">
+                            <label for="checkDidaticos2">Incluir didáticos</label>
+                        </div>
+                        <!-- valor dos livros 2 -->
+                        <div class="valordidaticos">
+                            <span class="bookicon" id="bookicon2">
+                                <i class="fa-solid fa-book"></i>
+                            </span>
+                            <span class="didaticosvalorsemdesconto" id="didaticosvalorsemdesconto2"></span>
+                            <span class="didaticosmenos40porcento" id="didaticosmenos40porcento2"></span>
                         </div>
                     </div>
 
@@ -890,16 +906,25 @@
 
                     <!-- Checkbox area3 -->
                     <div class="divCheck">
+                        <!-- laudo aluno 3 -->
                         <div>
-                            <label for="checkLaudo3">Laudo/Atendimento especial</label>
                             <input type="checkbox" name="" id="checkLaudo3" onclick="temLaudo3()">
+                            <label for="checkLaudo3">Inclusão/hipótese</label>
                         </div>
+                        <!-- didaticos aluno 3 -->
                         <div class="div-didaticos">
-                            <label for="checkDidaticos3">Incluir Didáticos</label>
                             <input type="checkbox" name="" id="checkDidaticos3" onclick="incluirDidaticos3()">
+                            <label for="checkDidaticos3">Incluir Didáticos</label>
+                        </div>
+                        <!-- valor dos livros 3 -->
+                        <div class="valordidaticos">
+                            <span class="bookicon" id="bookicon3">
+                                <i class="fa-solid fa-book"></i>
+                            </span>
+                            <span class="didaticosvalorsemdesconto" id="didaticosvalorsemdesconto3"></span>
+                            <span class="didaticosmenos40porcento" id="didaticosmenos40porcento3"></span>
                         </div>
                     </div>
-
                 </div>
 
                 <!-- ALUNO 04 -->
@@ -1167,15 +1192,26 @@
 
                     <!-- checkbox area4 -->
                     <div class="divCheck">
+                        <!-- laudo aluno 4 -->
                         <div>
-                            <label for="checkLaudo4">Laudo/Atendimento especial</label>
                             <input type="checkbox" name="" id="checkLaudo4" onclick="temLaudo4()">
+                            <label for="checkLaudo4">Inclusão/hipótese</label>
                         </div>
+                        <!-- didaticos aluno 4 -->
                         <div class="div-didaticos">
-                            <label for="checkDidaticos4">Incluir Didáticos</label>
                             <input type="checkbox" name="" id="checkDidaticos4" onclick="incluirDidaticos4()">
+                            <label for="checkDidaticos4">Incluir Didáticos</label>
+                        </div>
+                        <!-- valor dos livros 4 -->
+                        <div class="valordidaticos">
+                            <span class="bookicon" id="bookicon4">
+                                <i class="fa-solid fa-book"></i>
+                            </span>
+                            <span class="didaticosvalorsemdesconto" id="didaticosvalorsemdesconto4"></span>
+                            <span class="didaticosmenos40porcento" id="didaticosmenos40porcento4"></span>
                         </div>
                     </div>
+                    
 
                 </div>       
 
@@ -1331,11 +1367,24 @@
             <button class="btn btn-primary"  onclick="gerarPDF()">Imprimir</button>
             <button id="bt-copiarAcrm" class="btn btn-secondary"  onclick="copiarDados()">Copiar</button>
             <button class="btn btn-success"  onclick="sendDataToClientWhatsApp()">WhatsApp</button>
-
+            <button class="btn btn-info" onclick="toggleInfo()">Informações</button>
         </div>
-        
+
     </div>
+
 </div>
+
+<footer class="footerprincipal">
+    <a href="">Vagas</a>
+    <a href="https://drive.google.com/drive/u/1/folders/1qy6c9Gkz2QbThrS0S4te8iC-8K0_aYhM" target="_blank">Inclusão</a>
+    <a href="https://drive.google.com/drive/u/1/folders/17OgqB3HLO1eWdo9ThKvrdSJwEa3GmQ_a" target="_blank">Entrevista</a>
+    <a href="" target="_blank">Contraturno</a>
+    <a href="https://linktr.ee/novotempostoreasp" target="_blank">Loja</a>
+    <a href="" target="_blank">Materiais</a>
+    <a href="" target="_blank">Documentos</a>
+    <a href="" target="_blank">Transporte</a>
+    <a href="" target="_blank">Cantina</a>
+</footer>
 
 <!-- ================================================== -->
 <!-- ================================================== -->
@@ -1545,7 +1594,30 @@
 <!-- ================================================== -->
 <!-- ================================================== -->
 <!-- POPUP TAXA -->
-<div class="popup popupTaxa" id="popupTaxa">
+<div class="popup" id="popupInfo">
+
+    <div class="overlay"></div>
+    
+    <div class="content">
+        <div class="close-btn" onclick="toggleInfo()">&times;</div>
+        <br><br>
+        <h5>Informações</h5>
+        <hr>
+        <ul>
+            <li>Início das aulas: 05/02/2023</li>
+            <li>Entrevista pedagógica é obrigatória para finalizar a matrícula</li>
+            <li>Contraturno não terá período intermediário em 2024.</li>
+            <!-- <li></li>
+            <li></li>
+            <li></li> -->
+        </ul>
+        
+       
+    </div>
+</div>
+
+
+
 
     <div class="overlay"></div>
     

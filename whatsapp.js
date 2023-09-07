@@ -58,16 +58,16 @@ function sendDataToClientWhatsApp() {
    
    var whatsappurl 
 
-   const intro = 'Olá, *'+ responsavel + '*! Ficamos felizes por sua visita! Segue abaixo a proposta do Colégio Adventista Centenário:%0a' 
+   const intro = 'Olá, *'+ responsavel.trim() + '*! Ficamos felizes por sua visita! Segue abaixo a proposta do Colégio Adventista Centenário:%0a' 
 
   
-   const msg1 = '*' + aluno1 + '*%0a' + serie1 + ': ' + v1.value + '%0a' + didat1
+   const msg1 = '*' + aluno1.trim() + '*%0a' + serie1 + ': ' + v1.value + '%0a' + didat1
 
-   const msg2 = '*' + aluno2 + '*%0a' + serie2 + ': ' + v2.value + '%0a' + didat2
+   const msg2 = '*' + aluno2.trim() + '*%0a' + serie2 + ': ' + v2.value + '%0a' + didat2
 
-   const msg3 = '*' + aluno3 + '*%0a' + serie3 + ': ' + v3.value + '%0a' + didat3
+   const msg3 = '*' + aluno3.trim() + '*%0a' + serie3 + ': ' + v3.value + '%0a' + didat3
 
-   const msg4 = '*' + aluno4 + '*%0a' + serie4 + ': ' + v4.value + '%0a' + didat4
+   const msg4 = '*' + aluno4.trim() + '*%0a' + serie4 + ': ' + v4.value + '%0a' + didat4
 
    let atendente = document.querySelector('#select-atendentes').value
 
@@ -116,19 +116,19 @@ function sendDataToClientWhatsApp() {
 
    } else if (numeroDeAlunos == 1) {
    
-      whatsappurl = "https://wa.me/" + ddd + phone + "?text=" + intro + "%0a" + msg1 + "%0a" + msginfo
+      whatsappurl = "https://wa.me/" + ddd + phone.trim() + "?text=" + intro + "%0a" + msg1 + "%0a" + msginfo
 
    } else if (numeroDeAlunos == 2) {
 
-      whatsappurl = "https://wa.me/" + ddd + phone + "?text=" + intro + "%0a" + msg1 + "%0a" + msg2 + "%0a" + msginfo
+      whatsappurl = "https://wa.me/" + ddd + phone.trim() + "?text=" + intro + "%0a" + msg1 + "%0a" + msg2 + "%0a" + msginfo
 
    } else if (numeroDeAlunos == 3) {
 
-      whatsappurl = "https://wa.me/" + ddd + phone + "?text=" + intro + "%0a" + msg1 + "%0a" + msg2 + "%0a" + msg3 + "%0a" + msginfo
+      whatsappurl = "https://wa.me/" + ddd + phone.trim() + "?text=" + intro + "%0a" + msg1 + "%0a" + msg2 + "%0a" + msg3 + "%0a" + msginfo
 
    } else if (numeroDeAlunos == 4) {
 
-      whatsappurl = "https://wa.me/" + ddd + phone + "?text=" + intro + "%0a" + msg1 + "%0a" + msg2 + "%0a" + msg3 + "%0a" + msg4 + "%0a" + msginfo
+      whatsappurl = "https://wa.me/" + ddd + phone.trim() + "?text=" + intro + "%0a" + msg1 + "%0a" + msg2 + "%0a" + msg3 + "%0a" + msg4 + "%0a" + msginfo
 
    }
 
