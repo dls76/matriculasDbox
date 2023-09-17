@@ -363,6 +363,7 @@ ul li p {
     margin: 0;
 }
 
+
 .title-item {
     padding: 18px 10px 4px 18px;
     font-weight: bolder;    
@@ -644,4 +645,9 @@ ul li p {
 .didaticosvalorsemdesconto, .didaticosmenos40porcento {
     width: 3rem;
     text-align: right;
+}
+
+.footerprincipal a:hover {
+    color: black;
+    cursor: pointer;
 }

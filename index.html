@@ -27,11 +27,11 @@
     <footer class="footerprincipal">
         <a href="">Vagas</a>
         <a href="https://docs.google.com/spreadsheets/d/1w6oDCjom87jLNrvSpCIO8-GGdbDlSm9j7iwI16JO4dc/edit#gid=0" target="_blank">Inclusão</a>
-        <a href="https://drive.google.com/drive/u/1/folders/17OgqB3HLO1eWdo9ThKvrdSJwEa3GmQ_a" target="_blank">Entrevista</a>
+        <a href="https://drive.google.com/drive/u/1/folders/1OQB-_YziWbeMfuSmuefWvL5XqtyzLEim" target="_blank">Entrevista</a>
         <a href="" target="_blank">Contraturno</a>
         <a href="https://linktr.ee/novotempostoreasp" target="_blank">Loja</a>
         <a href="" target="_blank">Materiais</a>
-        <a href="" target="_blank">Documentos</a>
+        <a onclick="toggleDocumentos()">Documentos</a>
         <a href="" target="_blank">Transporte</a>
         <a href="" target="_blank">Cantina</a>
     </footer>
@@ -1354,7 +1354,7 @@
             <div id="taxa-eventos">
                 <label for="taxa">Taxa</label>
                 <input id="taxa" type="text" value="560" class="form-control form-control-sm valor">
-                <img src="imagens/calendar.jpg" alt="" id="calendar-icon" onclick="toggleTaxa()">
+                <img src="imagens/info.png" alt="" id="calendar-icon" onclick="toggleTaxa()">
             </div>
 
             <!-- Atendentes -->
@@ -1601,7 +1601,7 @@
 <div class="popup" id="popupInfo">
     <div class="overlay"></div>
     <div class="content">
-        <div class="close-btn" onclick="toggleInfo()">&times;</div>
+        <div class="close-btn" onclick="toggleInfo()"><i class="fa-solid fa-circle-xmark"></i>;</div>
         <br><br>
         <h5>Informações</h5>
         <hr>
@@ -1619,7 +1619,7 @@
 <div class="popup" id="popupTaxa">
     <div class="overlay">
         <div class="content">
-            <div class="close-btn" onclick="toggleTaxa()">&times;</div>
+            <div class="close-btn" onclick="toggleTaxa()"><i class="fa-solid fa-circle-xmark"></i>;</div>
             <br><br>
             <h5>Taxa de Eventos</h5>
             <hr>
@@ -1654,7 +1654,7 @@
     <div class="overlay"></div>
     
     <div class="content">
-        <div class="close-btn" onclick="toggleCT()">&times;</div>
+        <div class="close-btn" onclick="toggleCT()"><i class="fa-solid fa-circle-xmark"></i>;</div>
         <h5>Contraturno</h5>
 
         <table class="tabelaCt" style="width: 90%; margin: 30px auto 0 auto; font-size: small;">
@@ -1713,7 +1713,7 @@
     
     <div class="content">
        
-        <div class="close-btn" onclick="toggleInclusao()">&times;</div>
+        <div class="close-btn" onclick="toggleInclusao()"><i class="fa-solid fa-circle-xmark"></i>;</div>
        
         <h5>Inclusão</h5>
         
@@ -1747,7 +1747,7 @@
     <div class="overlay"></div>
     
     <div class="content">
-        <div class="close-btn" onclick="toggleMateriais()">&times;</div>
+        <div class="close-btn" onclick="toggleMateriais()"><i class="fa-solid fa-circle-xmark"></i>;</div>
         <h5>Listas de Materiais</h5>
         
         <table class="tabela-didaticos">
@@ -1807,7 +1807,7 @@
     <div class="overlay"></div>
     
     <div class="content">
-        <div class="close-btn" onclick="toggleLivros()">&times;</div>
+        <div class="close-btn" onclick="toggleLivros()"><i class="fa-solid fa-circle-xmark"></i>;</div>
         <h5>Novo Tempo Store</h5>
         <br><br>
         <p><a href="https://linktr.ee/novotempostoreasp" target="_blank"><img src="imagens/ntstore-logo.png" alt="" id="nt-logo"></a></p>
@@ -1825,7 +1825,7 @@
     <div class="overlay"></div>
     
     <div class="content">
-        <div class="close-btn" onclick="toggleCantina()">&times;</div>
+        <div class="close-btn" onclick="toggleCantina()"><i class="fa-solid fa-circle-xmark"></i>;</div>
         <h5>Cantina</h5>
         <br><br>
         <p>Serviço terceirizado com supervisão de Nutricionista. </p>
@@ -1845,7 +1845,7 @@
     <div class="overlay"></div>
     
     <div class="content">
-        <div class="close-btn" onclick="toggleTransporte()">&times;</div>
+        <div class="close-btn" onclick="toggleTransporte()"><i class="fa-solid fa-circle-xmark"></i>;</div>
         <h5>Transporte Escolar</h5>
     <br><br>
     <p>Serviço terceirizado.</p>
@@ -1863,7 +1863,7 @@
     <div class="overlay"></div>
     
     <div class="content">
-        <div class="close-btn" onclick="toggleDocumentos()">&times;</div>
+        <div class="close-btn" onclick="toggleDocumentos()"><i class="fa-solid fa-circle-xmark"></i></div>
         <h5>Documentos para Matrícula</h5>
     <br><br>
     <ol>
@@ -1878,7 +1878,7 @@
         <li>Declaração de quitação financeira (se a escola de origem for particular).</li>
     </ol>
 
-    <p><a href="documentos-para-matricula.pdf" target="_blank" id="lista-materiais">Imprimir lista</a></p>
+    <!-- <p><a href="documentos-para-matricula.pdf" target="_blank" id="lista-materiais">Imprimir lista</a></p> -->
         
     </div>
 </div>
@@ -1886,3 +1886,4 @@
     <script src="whatsapp.js"></script>
 </body>
 </html>
+
