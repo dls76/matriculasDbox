@@ -39,7 +39,7 @@ body {
     background-color: #fff;
     padding: .4rem;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-    border-left: 5px solid #0D6EFD;
+    border-left: 7px solid #0D6EFD;
 }
 
 
@@ -638,12 +638,14 @@ ul li p {
     display: none;
 }
 
-.bookicon, .didaticosvalorsemdesconto, .didaticosmenos40porcento {
-    padding-right: .3rem;
+.bookicon, .didaticosvalorsemdesconto, .didaticosmenos40porcento, .didaticosdif {
+    padding-right: .5rem;
+    margin-right: 1rem;
+    font-size: .7rem;
 }
 
-.didaticosvalorsemdesconto, .didaticosmenos40porcento {
-    width: 3rem;
+.didaticosvalorsemdesconto, .didaticosmenos40porcento, .didaticosdif {
+    width: 3.2rem;
     text-align: right;
 }
 

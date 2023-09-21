@@ -25,11 +25,22 @@ function getBooksPrice1() {
     let bookicon1 = document.querySelector('#bookicon1')
 
     for (let i=0; i<=valoresdidaticos.length; i++) {
+
         if (valoresdidaticos[i].serie == serie1) {
+        
             const valorlivros1 = document.querySelector('#didaticosvalorsemdesconto1')    
-            const valorcomdesconto1 = document.querySelector('#didaticosmenos40porcento1')   
+        
+            const valorcomdesconto1 = document.querySelector('#didaticosmenos40porcento1')
+        
+            const diferencaDidaticos = document.querySelector('#didaticosdif')
+
             valorlivros1.innerHTML = valoresdidaticos[i].valor.toFixed(2)   
+            
             valorcomdesconto1.innerHTML = (valoresdidaticos[i].valor * 0.6).toFixed(2)
+            
+            diferencaDidaticos.innerHTML = '-' + (valoresdidaticos[i].valor * 0.4).toFixed(2) 
+            
+            
             bookicon1.style.display = "flex"
         }
     }
@@ -43,9 +54,12 @@ function getBooksPrice2() {
     for (let i=0; i<=valoresdidaticos.length; i++) {
         if (valoresdidaticos[i].serie == serie2) {
             const valorlivros2 = document.querySelector('#didaticosvalorsemdesconto2')    
-            const valorcomdesconto2 = document.querySelector('#didaticosmenos40porcento2')   
+            const valorcomdesconto2 = document.querySelector('#didaticosmenos40porcento2')
+            const diferencaDidaticos2 = document.querySelector('#didaticosdif2')
+
             valorlivros2.innerHTML = valoresdidaticos[i].valor.toFixed(2)   
             valorcomdesconto2.innerHTML = (valoresdidaticos[i].valor * 0.6).toFixed(2)
+            diferencaDidaticos2.innerHTML = '-' + (valoresdidaticos[i].valor * 0.4).toFixed(2) 
             bookicon2.style.display = "flex"
         }
     }
@@ -59,9 +73,11 @@ function getBooksPrice3() {
     for (let i=0; i<=valoresdidaticos.length; i++) {
         if (valoresdidaticos[i].serie == serie3) {
             const valorlivros3 = document.querySelector('#didaticosvalorsemdesconto3')    
-            const valorcomdesconto3 = document.querySelector('#didaticosmenos40porcento3')   
+            const valorcomdesconto3 = document.querySelector('#didaticosmenos40porcento3')
+            const diferencaDidaticos3 = document.querySelector('#didaticosdif3')   
             valorlivros3.innerHTML = valoresdidaticos[i].valor.toFixed(2)   
             valorcomdesconto3.innerHTML = (valoresdidaticos[i].valor * 0.6).toFixed(2)
+            diferencaDidaticos3.innerHTML = '-' + (valoresdidaticos[i].valor * 0.4).toFixed(2) 
             bookicon3.style.display = "flex"
         }
     }
@@ -75,9 +91,11 @@ function getBooksPrice4() {
     for (let i=0; i<=valoresdidaticos.length; i++) {
         if (valoresdidaticos[i].serie == serie4) {
             const valorlivros4 = document.querySelector('#didaticosvalorsemdesconto4')    
-            const valorcomdesconto4 = document.querySelector('#didaticosmenos40porcento4')   
+            const valorcomdesconto4 = document.querySelector('#didaticosmenos40porcento4') 
+            const diferencaDidaticos4 = document.querySelector('#didaticosdif4')     
             valorlivros4.innerHTML = valoresdidaticos[i].valor.toFixed(2)   
             valorcomdesconto4.innerHTML = (valoresdidaticos[i].valor * 0.6).toFixed(2)
+            diferencaDidaticos4.innerHTML = '-' + (valoresdidaticos[i].valor * 0.4).toFixed(2) 
             bookicon4.style.display = "flex"
         }
     }
