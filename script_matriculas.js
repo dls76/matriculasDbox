@@ -17,7 +17,7 @@ const valoresdidaticos = [
     {serie: "3º Ensino Médio", valor: 1521+39.9},
     {serie: "Contraturno", valor: 0}
 ]
-
+/*
 function getBooksPrice1() { 
     
     let s1 = document.querySelector('#serie1')
@@ -100,7 +100,7 @@ function getBooksPrice4() {
         }
     }
 }
-
+*/
 
 // Informa se o aluno 1 tem laudo ou necessita atendimento especial
 temLaudo = () => {
