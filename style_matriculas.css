@@ -373,7 +373,7 @@ ul li p {
    
 .content-item {
     padding: 4px 15px 7px 18px;
-    color: #202020;
+    color: #000;
     font-size: xx-small;
 }
 
@@ -381,7 +381,7 @@ ul li p {
     padding: 0 18px;
     margin: 0;
     font-size: xx-small;
-    color: #202020;
+    color: #000;
 }
 
 #last-child-obs {
