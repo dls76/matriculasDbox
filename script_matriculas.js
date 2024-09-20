@@ -786,5 +786,5 @@ if (s1.value !== '0.0' && s2.value == '0.0') {
 function reverterTextoCopiado() {
     let btcopiar = document.querySelector('#bt-copiarAcrm')
     btcopiar.innerHTML = 'Copiar'
-    btcopiar.style.backgroundColor = '#5C636A' 
+    btcopiar.style.backgroundColor = '#DC3545' 
 }
