@@ -721,8 +721,9 @@ function copiarDados() {
     let d1 = document.getElementById('desconto1')
     let p1 = document.getElementById('parcelas1')
     let m1 = document.getElementById('valorFinal1')
-    let l1 = ""; if (document.getElementById('checkLaudo1').checked == true) {l1 = "laudo/suspeita"} else {l1 = "sem laudo/suspeita"}
-    let dt1 = ""; if (document.getElementById('checkDidaticos1').checked == true) {dt1 = "didáticos inclusos"} else {dt1 = "sem didáticos"}
+    let l1 = ""; if (document.getElementById('checkLaudo1').checked == true) {l1 = "laudo/suspeita"} else {l1 = " sem laudo/suspeita"}
+    let dt1 = ""; if (document.getElementById('checkDidaticos1').checked == true) {dt1 = ", didáticos inclusos"} else {dt1 = ", sem didáticos"}
+    let pre1 = ""; if (document.querySelector('#checkPresenca1').checked == true) {pre1 = "(ausente)"} else {pre1 = "(presente)"}
 
     let n2 = document.getElementById('txtNome2')
     let s2 = document.getElementById('serie2')
@@ -730,8 +731,9 @@ function copiarDados() {
     let d2 = document.getElementById('desconto2')
     let p2 = document.getElementById('parcelas2')
     let m2 = document.getElementById('valorFinal2')
-    let l2 = ""; if (document.getElementById('checkLaudo2').checked == true) {l2 = ", laudo/suspeita"} else {l2 = ", sem laudo/suspeita"}
+    let l2 = ""; if (document.getElementById('checkLaudo2').checked == true) {l2 = " laudo/suspeita"} else {l2 = " sem laudo/suspeita"}
     let dt2 = ""; if (document.getElementById('checkDidaticos2').checked == true) {dt2 = ", didáticos inclusos"} else {dt2 = ", sem didáticos"}
+    let pre2 = ""; if (document.querySelector('#checkPresenca2').checked == true) {pre2 = "(ausente)"} else {pre2 = "(presente)"}
     
     let n3 = document.getElementById('txtNome3')
     let s3 = document.getElementById('serie3')
@@ -739,8 +741,9 @@ function copiarDados() {
     let d3 = document.getElementById('desconto3')
     let p3 = document.getElementById('parcelas3')
     let m3 = document.getElementById('valorFinal3')
-    let l3 = ""; if (document.getElementById('checkLaudo3').checked == true) {l3 = ", laudo/suspeita"} else {l3 = ", sem laudo/suspeita"}
+    let l3 = ""; if (document.getElementById('checkLaudo3').checked == true) {l3 = " laudo/suspeita"} else {l3 = " sem laudo/suspeita"}
     let dt3 = ""; if (document.getElementById('checkDidaticos3').checked == true) {dt3 = ", didáticos inclusos"} else {dt3 = ", sem didáticos"}
+    let pre3 = ""; if (document.querySelector('#checkPresenca3').checked == true) {pre3 = "(ausente)"} else {pre3 = "(presente)"}
     
     let n4 = document.getElementById('txtNome4')
     let s4 = document.getElementById('serie4')
@@ -748,33 +751,37 @@ function copiarDados() {
     let d4 = document.getElementById('desconto4')
     let p4 = document.getElementById('parcelas4')
     let m4 = document.getElementById('valorFinal4')
-    let l4 = ""; if (document.getElementById('checkLaudo4').checked == true) {l4 = ", laudo/suspeita"} else {l4 = ", sem laudo/suspeita"}
+    let l4 = ""; if (document.getElementById('checkLaudo4').checked == true) {l4 = " laudo/suspeita"} else {l4 = " sem laudo/suspeita"}
     let dt4 = ""; if (document.getElementById('checkDidaticos4').checked == true) {dt4 = ", didáticos inclusos"} else {dt4 = ", sem didáticos"}
+    let pre4 = ""; if (document.querySelector('#checkPresenca4').checked == true) {pre4 = "(ausente)"} else {pre4 = "(presente)"}
 
+    let textoColagem1 = 'Aluno 1) ' + n1.value + ' ' + pre1 + ', ' + serie1 + ', ' + p1.value + 'x R$ ' + m1.value + ', ' + d1.value + '%, ' + l1 + dt1 + ', taxa: R$ ' + taxa1.value + ',00. ';
+    let textoColagem2 = 'Aluno 2) ' + n2.value + ' ' + pre2 + ', ' + serie2 + ', ' + p2.value + 'x R$ ' + m2.value + ', ' + d2.value + '%, ' + l2 + dt2 + ', taxa: R$ ' + taxa1.value + ',00. ';
+    let textoColagem3 = 'Aluno 3) ' + n3.value + ' ' + pre3 + ', ' + serie3 + ', ' + p3.value + 'x R$ ' + m3.value + ', ' + d3.value + '%, ' + l3 + dt3 + ', taxa: R$ ' + taxa1.value + ',00. ';
+    let textoColagem4 = 'Aluno 4) ' + n4.value + ' ' + pre4 + ', ' + serie4 + ', ' + p4.value + 'x R$ ' + m4.value + ', ' + d4.value + '%, ' + l4 + dt4 + ', taxa: R$ ' + taxa1.value + ',00. ';
+    
 
-let textoColagem = 'Aluno 1) ' + n1.value + ', ' + serie1 + ', ' + p1.value + ' x R$ ' + m1.value + ', ' + d1.value + '%, ' + l1 + ', ' + dt1 + ', taxa R$ '+ taxa1.value + ',00.'
+let textoObs = obs1.value
 
-let textoObs = obs1.value+"\n"
+if (s1.value !== '0.0' && s2.value == '0.0') { /*Um aluno*/
 
-if (s1.value !== '0.0' && s2.value == '0.0') { 
+    textoColagem1 += textoObs
 
-    textoColagem += textoObs
+} else if (s1.value != '0.0' && s2.value != '0.0' && s3.value == '0.0') { /*Dois alunos*/
 
-} else if (s1.value != '0.0' && s2.value != '0.0' && s3.value == '0.0') {
+    textoColagem1 += ' ' + textoColagem2 + ' ' + textoObs
 
-    textoColagem += ' Aluno 2) ' + n2.value + ', ' + serie2 + ', ' + p2.value + 'x R$ ' + m2.value + ' (' + d2.value + '), ' + l2 + ' ' + dt2 + ' - Taxa: R$ '+ taxa1.value + ',00.' + ' ' + textoObs
+} else if (s1.value != '0.0' && s2.value != '0.0' && s3.value != '0.0' && s4.value == '0.0') {/*Três alunos*/
 
-} else if (s1.value != '0.0' && s2.value != '0.0' && s3.value != '0.0' && s4.value == '0.0') {
+    textoColagem1 += ' ' + textoColagem2 + ' ' + textoColagem3 + ' ' + textoObs
 
-    textoColagem += ' Aluno 2) ' + n2.value + ' (' + d2.value + '%) - ' + p2.value + 'x R$ ' + m2.value + ' ' + l2 + ' ' + dt2 + ' ' + ' Aluno 3) ' + n3.value + ' (' + d3.value + '%) - ' + p3.value + 'x R$ ' + m3.value + ' ' + l3 + ' ' + dt3 + ' - Taxa: R$ '+ taxa1.value + ',00.' + ' ' + textoObs
-
-} else if (s1.value != '0.0' && s2.value != '0.0' && s3.value != '0.0' && s4.value != '0.00') {
+} else if (s1.value != '0.0' && s2.value != '0.0' && s3.value != '0.0' && s4.value != '0.00') { /*Quatro alunos*/
  
-    textoColagem += ' Aluno 2) ' + n2.value + ' (' + d2.value + '%) - ' + p2.value + 'x R$ ' + m2.value + ' ' + l2 + ' ' + dt2 + ' ' + ' Aluno 3) ' + n3.value + ' (' + d3.value + '%) - ' + p3.value + 'x R$ ' + m3.value + ' ' + l3 + ' ' + dt3 + ' - Taxa: R$ '+ taxa1.value + ',00.' + ' ' + ' Aluno 4) ' + n4.value + ' (' + d4.value + '%) - ' + p4.value + 'x R$ ' + m4.value + ' ' + l4 + ' ' + dt4 + ' ' + textoObs
+    textoColagem1 += textoColagem2 + textoColagem3 + textoColagem4 + textoObs
 
 }
 
-    colagem1.value = textoColagem
+    colagem1.value = textoColagem1
     colagem1.select()
     document.execCommand("copy");
 
@@ -788,3 +795,14 @@ function reverterTextoCopiado() {
     btcopiar.innerHTML = 'Copiar'
     btcopiar.style.backgroundColor = '#DC3545' 
 }
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    let borracha = document.querySelector('#apagartxtarea');
+
+    borracha.addEventListener('click', apagarTxtArea);
+
+    function apagarTxtArea() {
+        document.querySelector('#input-obs').value = '';
+    }
+});

@@ -355,6 +355,12 @@
 
                     <!-- checkbox area 1-->
                     <div class="divCheck">
+                        <!-- Controle Presença aluno1 -->
+                        <div class="div-presencaAluno">
+                            <input type="checkbox" name="" id="checkPresenca1">
+                            <label for="checkPresenca1">Aluno(a) ausente</label>
+                        </div>
+                        
                         <!-- Laudo aluno1 -->
                         <div>
                             <input type="checkbox" name="" id="checkLaudo1" onclick="temLaudo()">
@@ -365,6 +371,7 @@
                             <input type="checkbox" name="" id="checkDidaticos1" onclick="incluirDidaticos1()">
                             <label for="checkDidaticos1">Incluir Didáticos</label>
                         </div>
+                        
                         <!-- valor dos livros 1 -->
                         <div class="valordidaticos">
                             <span class="bookicon" id="bookicon1">
@@ -655,6 +662,12 @@
 
                     <!-- Checkbox area2 -->
                     <div class="divCheck">
+
+                        <!-- Controle Presença aluno2 -->
+                        <div class="div-presencaAluno">
+                            <input type="checkbox" name="" id="checkPresenca2">
+                            <label for="checkPresenca2">Aluno(a) ausente</label>
+                        </div>
                         <!-- Laudo aluno2 -->
                         <div>
                             <input type="checkbox" name="" id="checkLaudo2" onclick="temLaudo2()">
@@ -665,6 +678,7 @@
                             <input type="checkbox" name="" id="checkDidaticos2" onclick="incluirDidaticos2()">
                             <label for="checkDidaticos2">Incluir didáticos</label>
                         </div>
+                        
                         <!-- valor dos livros 2 -->
                         <div class="valordidaticos">
                             <span class="bookicon" id="bookicon2">
@@ -955,6 +969,11 @@
 
                     <!-- Checkbox area3 -->
                     <div class="divCheck">
+                        <!-- Controle Presença aluno3 -->
+                        <div class="div-presencaAluno">
+                            <input type="checkbox" name="" id="checkPresenca3">
+                            <label for="checkPresenca3">Aluno(a) ausente</label>
+                        </div>
                         <!-- laudo aluno 3 -->
                         <div>
                             <input type="checkbox" name="" id="checkLaudo3" onclick="temLaudo3()">
@@ -1252,6 +1271,11 @@
 
                     <!-- checkbox area4 -->
                     <div class="divCheck">
+                        <!-- Controle Presença aluno4 -->
+                        <div class="div-presencaAluno">
+                            <input type="checkbox" name="" id="checkPresenca4">
+                            <label for="checkPresenca4">Aluno(a) ausente</label>
+                        </div>
                         <!-- laudo aluno 4 -->
                         <div>
                             <input type="checkbox" name="" id="checkLaudo4" onclick="temLaudo4()">
@@ -1407,7 +1431,14 @@
     
         <!-- Campo para Observações -->
         <div id="observacoes">
-            <label for="tx-obs">Observações</label>
+            <div class="conteinerObservacoes">
+                <label for="tx-obs">Observações</label>
+                <span id="apagartxtarea"><i class="fa-solid fa-eraser"></i></span>
+            </div>
+            <style>
+                .conteinerObservacoes {display: flex; justify-content: space-between; align-items: center;}
+                .conteinerObservacoes span {color: gray; cursor: pointer;}
+            </style>
             <textarea name="tx-obs" id="input-obs" cols="26" rows="20"></textarea>
         </div>
 
@@ -1597,11 +1628,12 @@
         <h5>Informações</h5>
         <hr>
         <ul>
-            <li>Início das aulas: 05/02/2023 (para melhor adaptação, algumas séries poderão mudar o dia)</li>
+            <li>Início das aulas: 03/02/2023 (FII - EM)</li>
+            <li>Início das aulas: 04/02/2023 (EI - FI)</li>
             <li>Comunicados oficiais: aplicativo agenda (ou agenda adventista)</li>
             <li>Antes de iniciar as aulas, enviaremos comunicados por e-mail ou whatsapp dos responsáveis (até finalizar o cadastro no aplicativo)</li>
             <li>Entrevista pedagógica é obrigatória para finalizar a matrícula</li>
-            <li>Contraturno não terá período intermediário em 2024.</li>
+            <li>Contraturno não terá período intermediário em 2025.</li>
         </ul>
     </div>
 </div>
