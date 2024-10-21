@@ -996,14 +996,14 @@ function copiarDados() {
   document.execCommand("copy");
 
   btcopiar.innerText = "Copiado!";
-  btcopiar.style.backgroundColor = "dodgerblue";
+  btcopiar.style.backgroundColor = "#000";  
   setTimeout(reverterTextoCopiado, 1000);
 }
 
 function reverterTextoCopiado() {
   let btcopiar = document.querySelector("#bt-copiarAcrm");
   btcopiar.innerHTML = "Copiar";
-  btcopiar.style.backgroundColor = "#DC3545";
+  btcopiar.style.backgroundColor = "#5C636A";
 }
   
   document.addEventListener("DOMContentLoaded", function () {
