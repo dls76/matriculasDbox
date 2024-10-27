@@ -1,106 +1,3 @@
-const valoresdidaticos = [
-  { serie: "Infantil 3 anos", valor: 437.7 },
-  { serie: "Infantil 4 anos", valor: 503.5 },
-  { serie: "Infantil 5 anos", valor: 503.5 },
-  { serie: "1º Fundamental", valor: 916.9 + 131 },
-  { serie: "2º Fundamental", valor: 916.9 + 156.7 },
-  { serie: "3º Fundamental", valor: 916.9 + 69.8 },
-  { serie: "4º Fundamental", valor: 916.9 + 69.8 },
-  { serie: "5º Fundamental", valor: 996.7 },
-  { serie: "6º Fundamental", valor: 1449.1 },
-  { serie: "7º Fundamental", valor: 1449.1 },
-  { serie: "8º Fundamental", valor: 1449.1 },
-  { serie: "9º Fundamental", valor: 1449.1 },
-  { serie: "1º Ensino Médio", valor: 1648.9 + 39.9 },
-  { serie: "2º Ensino Médio", valor: 1736.4 + 39.9 },
-  { serie: "3º Ensino Médio", valor: 1521 + 39.9 },
-  { serie: "Contraturno", valor: 0 },
-];
-/*
-function getBooksPrice1() { 
-    
-    let s1 = document.querySelector('#serie1')
-    let serie1 = s1.options[s1.selectedIndex].text
-    let bookicon1 = document.querySelector('#bookicon1')
-
-    for (let i=0; i<=valoresdidaticos.length; i++) {
-
-        if (valoresdidaticos[i].serie == serie1) {
-        
-            const valorlivros1 = document.querySelector('#didaticosvalorsemdesconto1')    
-        
-            const valorcomdesconto1 = document.querySelector('#didaticosmenos40porcento1')
-        
-            const diferencaDidaticos = document.querySelector('#didaticosdif')
-
-            valorlivros1.innerHTML = valoresdidaticos[i].valor.toFixed(2)   
-            
-            valorcomdesconto1.innerHTML = (valoresdidaticos[i].valor * 0.6).toFixed(2)
-            
-            diferencaDidaticos.innerHTML = '-' + (valoresdidaticos[i].valor * 0.4).toFixed(2) 
-            
-            
-            bookicon1.style.display = "flex"
-        }
-    }
-}
-
-function getBooksPrice2() { 
-    let s2 = document.querySelector('#serie2')
-    let serie2 = s2.options[s2.selectedIndex].text
-    let bookicon2 = document.querySelector('#bookicon2')
-
-    for (let i=0; i<=valoresdidaticos.length; i++) {
-        if (valoresdidaticos[i].serie == serie2) {
-            const valorlivros2 = document.querySelector('#didaticosvalorsemdesconto2')    
-            const valorcomdesconto2 = document.querySelector('#didaticosmenos40porcento2')
-            const diferencaDidaticos2 = document.querySelector('#didaticosdif2')
-
-            valorlivros2.innerHTML = valoresdidaticos[i].valor.toFixed(2)   
-            valorcomdesconto2.innerHTML = (valoresdidaticos[i].valor * 0.6).toFixed(2)
-            diferencaDidaticos2.innerHTML = '-' + (valoresdidaticos[i].valor * 0.4).toFixed(2) 
-            bookicon2.style.display = "flex"
-        }
-    }
-}
-
-function getBooksPrice3() { 
-    let s3 = document.querySelector('#serie3')
-    let serie3 = s3.options[s3.selectedIndex].text
-    let bookicon3 = document.querySelector('#bookicon3')
-
-    for (let i=0; i<=valoresdidaticos.length; i++) {
-        if (valoresdidaticos[i].serie == serie3) {
-            const valorlivros3 = document.querySelector('#didaticosvalorsemdesconto3')    
-            const valorcomdesconto3 = document.querySelector('#didaticosmenos40porcento3')
-            const diferencaDidaticos3 = document.querySelector('#didaticosdif3')   
-            valorlivros3.innerHTML = valoresdidaticos[i].valor.toFixed(2)   
-            valorcomdesconto3.innerHTML = (valoresdidaticos[i].valor * 0.6).toFixed(2)
-            diferencaDidaticos3.innerHTML = '-' + (valoresdidaticos[i].valor * 0.4).toFixed(2) 
-            bookicon3.style.display = "flex"
-        }
-    }
-}
-
-function getBooksPrice4() { 
-    let s4 = document.querySelector('#serie4')
-    let serie4 = s4.options[s4.selectedIndex].text
-    let bookicon4 = document.querySelector('#bookicon4')
-
-    for (let i=0; i<=valoresdidaticos.length; i++) {
-        if (valoresdidaticos[i].serie == serie4) {
-            const valorlivros4 = document.querySelector('#didaticosvalorsemdesconto4')    
-            const valorcomdesconto4 = document.querySelector('#didaticosmenos40porcento4') 
-            const diferencaDidaticos4 = document.querySelector('#didaticosdif4')     
-            valorlivros4.innerHTML = valoresdidaticos[i].valor.toFixed(2)   
-            valorcomdesconto4.innerHTML = (valoresdidaticos[i].valor * 0.6).toFixed(2)
-            diferencaDidaticos4.innerHTML = '-' + (valoresdidaticos[i].valor * 0.4).toFixed(2) 
-            bookicon4.style.display = "flex"
-        }
-    }
-}
-*/
-
 // Informa se o aluno 1 tem laudo ou necessita atendimento especial
 temLaudo = () => {
   let checkBox = document.getElementById("checkLaudo1");
@@ -744,46 +641,19 @@ incluirDidaticos4 = () => {
     calculaMensalidade4();
   }
 };
-// Exibem os modais
 
+// Exibem os modais
 function toggleInfo() {
   document.getElementById("popupInfo").classList.toggle("active");
-}
-function toggleTaxa() {
-  document.getElementById("popupTaxa").classList.toggle("active");
-}
-function toggleCT() {
-  document.getElementById("popupCt").classList.toggle("active");
-}
-function toggleInclusao() {
-  document.getElementById("popupInclusao").classList.toggle("active");
-}
-function toggleMateriais() {
-  document.getElementById("popupMateriais").classList.toggle("active");
-}
-function toggleLivros() {
-  document.getElementById("popupLivros").classList.toggle("active");
-}
-function toggleUniformes() {
-  document.getElementById("popupUniformes").classList.toggle("active");
-}
-function toggleCantina() {
-  document.getElementById("popupCantina").classList.toggle("active");
-}
-function toggleTransporte() {
-  document.getElementById("popupTransporte").classList.toggle("active");
-}
-function toggleDocumentos() {
-  document.getElementById("popupDocumentos").classList.toggle("active");
 }
 
 // Copiar dados para colar no ACRM
 function copiarDados() {
   let taxa1 = document.getElementById("taxa");
   let obs1 = document.getElementById("input-obs");
+  let comentarios = document.getElementById("txareaAcrm");
   let colagem1 = document.getElementById("colar");
   let btcopiar = document.querySelector("#bt-copiarAcrm");
-
   let n1 = document.getElementById("txtNome1");
   let s1 = document.getElementById("serie1");
   let serie1 = s1.options[s1.selectedIndex].text;
@@ -791,6 +661,8 @@ function copiarDados() {
   let p1 = document.getElementById("parcelas1");
   let m1 = document.getElementById("valorFinal1");
   let l1 = "";
+
+  //Analisa se os checklists estão clicados
   if (document.getElementById("checkLaudo1").checked == true) {
     l1 = "laudo/suspeita";
   } else {
@@ -858,7 +730,6 @@ function copiarDados() {
   } else {
     pre3 = "(presente)";
   }
-
   let n4 = document.getElementById("txtNome4");
   let s4 = document.getElementById("serie4");
   let serie4 = s4.options[s4.selectedIndex].text;
@@ -884,92 +755,24 @@ function copiarDados() {
     pre4 = "(presente)";
   }
 
-  let textoColagem1 =
-    "Aluno 1) " +
-    n1.value +
-    " " +
-    pre1 +
-    ", " +
-    serie1 +
-    ", " +
-    p1.value +
-    "x R$ " +
-    m1.value +
-    ", " +
-    d1.value +
-    "%, " +
-    l1 +
-    dt1 +
-    ", taxa: R$ " +
-    taxa1.value +
-    ",00. ";
-  let textoColagem2 =
-    "Aluno 2) " +
-    n2.value +
-    " " +
-    pre2 +
-    ", " +
-    serie2 +
-    ", " +
-    p2.value +
-    "x R$ " +
-    m2.value +
-    ", " +
-    d2.value +
-    "%, " +
-    l2 +
-    dt2 +
-    ", taxa: R$ " +
-    taxa1.value +
-    ",00. ";
-  let textoColagem3 =
-    "Aluno 3) " +
-    n3.value +
-    " " +
-    pre3 +
-    ", " +
-    serie3 +
-    ", " +
-    p3.value +
-    "x R$ " +
-    m3.value +
-    ", " +
-    d3.value +
-    "%, " +
-    l3 +
-    dt3 +
-    ", taxa: R$ " +
-    taxa1.value +
-    ",00. ";
-  let textoColagem4 =
-    "Aluno 4) " +
-    n4.value +
-    " " +
-    pre4 +
-    ", " +
-    serie4 +
-    ", " +
-    p4.value +
-    "x R$ " +
-    m4.value +
-    ", " +
-    d4.value +
-    "%, " +
-    l4 +
-    dt4 +
-    ", taxa: R$ " +
-    taxa1.value +
-    ",00. ";
-
-  let textoObs = obs1.value;
+  let textoColagem1="Aluno 1) "+n1.value+" "+pre1+", "+serie1+", "+p1.value+"x R$ "+m1.value+", "+d1.value+"%, "+l1+dt1+", taxa: R$ "+taxa1.value+",00. ";
+  let textoColagem2="Aluno 2) "+n2.value+" "+pre2+", "+serie2+", "+p2.value+"x R$ "+m2.value+", "+d2.value+"%, "+l2+dt2+", taxa: R$ "+taxa1.value+",00. ";
+  let textoColagem3="Aluno 3) "+n3.value+" "+pre3+", "+serie3+", "+p3.value+"x R$ "+m3.value+", "+d3.value+"%, "+l3+dt3+", taxa: R$ "+taxa1.value+",00. ";
+  let textoColagem4="Aluno 4) "+n4.value+" "+pre4+", "+serie4+", "+p4.value+"x R$ "+m4.value+", "+d4.value+"%, "+l4+dt4+", taxa: R$ "+taxa1.value+",00. ";
+  
+  let textoObs = ""
+  
+  if (obs1.value == "") {
+    textoObs = obs1.value
+  } else {
+    textoObs = obs1.value + '. ' + comentarios.value
+  }
 
   if (s1.value !== "0.0" && s2.value == "0.0") {
     /*Um aluno*/
-
     textoColagem1 += textoObs;
   } else if (s1.value != "0.0" && s2.value != "0.0" && s3.value == "0.0") {
     /*Dois alunos*/
-
     textoColagem1 += " " + textoColagem2 + " " + textoObs;
   } else if (
     s1.value != "0.0" &&
@@ -978,23 +781,16 @@ function copiarDados() {
     s4.value == "0.0"
   ) {
     /*Três alunos*/
-
     textoColagem1 += " " + textoColagem2 + " " + textoColagem3 + " " + textoObs;
   } else if (
-    s1.value != "0.0" &&
-    s2.value != "0.0" &&
-    s3.value != "0.0" &&
-    s4.value != "0.00"
-  ) {
-    /*Quatro alunos*/
-
-    textoColagem1 += textoColagem2 + textoColagem3 + textoColagem4 + textoObs;
-  }
+    s1.value != "0.0" &&    s2.value != "0.0" &&    s3.value != "0.0" &&    s4.value != "0.00"
+  )   
+  /*Quatro alunos*/
+  textoColagem1 += textoColagem2 + textoColagem3 + textoColagem4 + textoObs;
 
   colagem1.value = textoColagem1;
   colagem1.select();
   document.execCommand("copy");
-
   btcopiar.innerText = "Copiado!";
   btcopiar.style.backgroundColor = "#000";  
   setTimeout(reverterTextoCopiado, 1000);
@@ -1015,6 +811,16 @@ function reverterTextoCopiado() {
       confirmarExclusao();  // Chama a função de confirmação antes de apagar o conteúdo
     }
   });
+
+  document.addEventListener("DOMContentLoaded", function () {
+    let borrachaAcrm = document.querySelector("#apagartxtareaAcrm");
+  
+    borrachaAcrm.addEventListener("click", apagarAcrm);
+  
+    function apagarAcrm() {
+      confirmarExclusaoAcrm();  // Chama a função de confirmação antes de apagar o conteúdo
+    }
+  });
   
   function confirmarExclusao() {
     const textarea = document.getElementById("input-obs");
@@ -1022,6 +828,19 @@ function reverterTextoCopiado() {
     // Verifica se há conteúdo antes de exibir a confirmação
     if (textarea.value !== "") {
       const confirmacao = confirm("Tem certeza que deseja apagar as observações?");
+  
+      if (confirmacao) {
+        textarea.value = ""; // Se confirmado, apaga o conteúdo
+      }
+    }
+  }
+
+  function confirmarExclusaoAcrm() {
+    const textarea = document.getElementById("txareaAcrm");
+  
+    // Verifica se há conteúdo antes de exibir a confirmação
+    if (textarea.value !== "") {
+      const confirmacao = confirm("Deseja apagar os comentários do ACRM?");
   
       if (confirmacao) {
         textarea.value = ""; // Se confirmado, apaga o conteúdo

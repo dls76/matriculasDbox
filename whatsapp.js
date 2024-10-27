@@ -60,8 +60,7 @@ function sendDataToClientWhatsApp() {
 
    const intro = 'Olá, *'+ responsavel.trim() + '*! Ficamos felizes por sua visita! Segue abaixo a proposta do Colégio Adventista Centenário:%0a' 
 
-  
-   const msg1 = '*' + aluno1.trim() + '*%0a' + serie1 + ': ' + v1.value + '%0a' + didat1
+   const msg1 = '*' + aluno1.trim() + '*%0a' + serie1 + ': ' + v1.value + '%0a' + didat1 + '%0a'
 
    const msg2 = '*' + aluno2.trim() + '*%0a' + serie2 + ': ' + v2.value + '%0a' + didat2
 
@@ -72,18 +71,18 @@ function sendDataToClientWhatsApp() {
    let atendente = document.querySelector('#select-atendentes').value
 
    const msginfo = 
-   '%0a*Taxa de eventos*%0a' +
-   '560.00 por aluno, no ato da matrícula.%0a' +
-   'destina-se a lembranças e ações em datas especiais%0a%0a' + 
+   '*Taxa de eventos*%0a' +
+   'R$ 570,00 por aluno.%0a' +
+   'Pagamento na matrícula.%0a%0a' +
 
    '*Livros, materiais e uniformes*%0a' +
-   'acesse linktr.ee/novotempostoreasp%0a%0a' + 
+   'Acesse linktr.ee/novotempostoreasp%0a%0a' + 
 
    '*Cantina*%0a' +
-   'terceirizada com acompanhamento nutricional. WhatsApp: 41.99611.7704%0a%0a' + 
+   'Terceirizada com acompanhamento nutricional. Whats: (41)99611.7704%0a%0a' + 
 
    '*Entrevista com pais e alunos*%0a' +
-   'requisito para matrícula, mediante agendamento (trazer úlitmo boletim).%0a%0a' +
+   'Requisito para matrícula, mediante agendamento (trazer úlitmo boletim).%0a%0a' +
 
    '*Documentos p/ matrícula*%0a' +
    '- Certidão de Nascimento, RG e CPF do aluno.%0a'+
@@ -96,19 +95,24 @@ function sendDataToClientWhatsApp() {
    '- Declaração de quitação financeira (para escola particular).%0a%0a' +
 
    '*Início das aulas*%0a' +
-   '05/02/2024%0a%0a' + 
+   '- 03/02/2025 (6º ao EM)%0a' +
+   '- 04/02/2025 (Infantil ao 5º)%0a%0a' +  
 
    '*Horários*%0a' +
-   '_- Manhã_%0a' +
-   '7:15 às 11:40 (até 9º ano)%0a' +
-   '7:15 às 12:30 (Ens. Médio)%0a' + 
-   '_- Tarde_%0a' +
-   '13:00 às 17:40%0a' +
-   '13:00 às 16:40 (sexta-feira)%0a%0a' + 
+   '_Manhã_%0a' +
+   '- 7:15 às 11:40 (até o 9º ano)%0a' +
+   '- 7:15 às 12:30 (Ens. Médio)%0a' + 
+   '_Tarde_%0a' +
+   '- 13:15 às 17:40%0a' +
+   '- 13:00 às 16:40 (sexta-feira)%0a%0a' + 
+
    '*Nosso site*%0a' +
    'https://centenario.educacaoadventista.org.br/%0a%0a' +
-   '_Esta proposta não garante vaga_%0a' +
-   '_Atendente:_%0a' + atendente  
+
+   '*Importante*%0a' +
+   '_Esta proposta não garante vaga_%0a%0a' +
+
+   '*Atendente*%0a' + atendente  
 
    if (numeroDeAlunos == 0) {
 

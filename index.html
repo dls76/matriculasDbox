@@ -1394,8 +1394,9 @@
 
             <!-- Atendentes -->
             <div class="conteiner-atendentes">
+                <label for="select-atendentes">Atendente</label>
                 <select class="form-select form-select-sm" aria-label="Default select example" id="select-atendentes">
-                    <option selected value="Daisy (daisy.ferreira@educadventista.org.br)">Atendente</option>
+                    <option selected value="Atendente não selecionado">Selecione</option>
                     <option value="Alexandro (alexandro.gaspar@educadventista.org.br)">Alexandro</option>
                     <option value="Andressa (andressa.santos@educadventista.org.br)">Andressa</option>
                     <option value="Camila (camila.moura@educadventista.org.br)">Camila </option>
@@ -1411,36 +1412,37 @@
                     <option value="Sila (@educadventista.org.br)">Sila</option>
                     <option value="Valéria (valeria.miranda@educadventista.org.br)">Valéria</option>
                 </select>
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-
-
-
-
             </div>
 
         </div>
-
-    
+        
         <!-- Campo para Observações -->
-        <div id="observacoes">
-            <div class="conteinerObservacoes">
-                <label for="tx-obs">Observações</label>
-                <span id="apagartxtarea"><i class="fa-solid fa-eraser"></i></span>
+        <div class="conteinerDeObservacoes">
+
+        
+        
+            
+            <div id="observacoes">
+            
+                <div class="conteinerObservacoes">
+                    <label class="labeltxarea" for="tx-obs">Observações (p/ pais)</label><span id="apagartxtarea"><i class="fa-solid fa-eraser"></i></span>
+                </div>
+            
+
+                <textarea class="txarea" name="tx-obs" id="input-obs" cols="26" rows="20"></textarea>
+
             </div>
-            <style>
-                .conteinerObservacoes {display: flex; justify-content: space-between; align-items: center;}
-                .conteinerObservacoes span {color: gray; cursor: pointer;}
-            </style>
-            <textarea name="tx-obs" id="input-obs" cols="26" rows="20"></textarea>
+
+
+            <div id="observacoesacrm">
+
+                <div class="conteinerObservacoes">
+                    <label class="labeltxarea" for="tx-obs">Comentários (ACRM)</label><span id="apagartxtareaAcrm"><i class="fa-solid fa-eraser"></i></span>
+                </div>
+                
+                <textarea class="txarea" name="tx-obs" id="txareaAcrm" cols="26" rows="20"></textarea>
+
+            </div>
         </div>
 
         <!-- Conteiner botões -->

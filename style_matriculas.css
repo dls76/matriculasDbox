@@ -3,6 +3,7 @@
     padding: 0;
     font-family: 'Lato';
 }
+
 html, body {
     width: 100%;
     height: 100%;
@@ -39,9 +40,11 @@ body {
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     border-left: 7px solid #0D6EFD;
 }
+
 .conteiner:first-of-type {
     border-left: 7px solid #959595;
 }
+
 .sub-conteiner {
     width: 100%;
     display: flex;
@@ -80,11 +83,11 @@ body {
     background-color: white;
 }
 
- .nome::placeholder, .parcerias::placeholder {
+.nome::placeholder, .parcerias::placeholder {
     position: relative;
     top: -7px;
     font-size: x-small;
-    color:gray !important;
+    color: gray !important;
 }
 
 .serie {
@@ -107,18 +110,23 @@ body {
     padding: 3px 0px 3px 10px;
 }
 
-#input-obs {
+.txarea {
     width: 100%;
-    height: 7.65rem;
+    height: 100px;
     padding: 1rem;
     border-radius: 5px;
-    border: 1px solid lightgray;
     box-shadow: 1px 1px 3px lightgray;
-    font-size: small;
+    font-size: 12px;
+    color: gray;
     resize: none;
 }
-
-#input-obs:focus{
+#input-obs {
+    border: 1px solid #0B5ED7;
+}
+#txareaAcrm {
+    border: 1px solid black;
+}
+.txarea:focus {
     box-shadow: 3px 3px 15px lightgray;
     outline: none;
     border: 1.5px solid #838282;
@@ -127,10 +135,10 @@ body {
 
 /* Botão imprimir */
 #conteiner-buttons {
-   display: flex;
-   justify-content: flex-start;
+    display: flex;
+    justify-content: flex-start;
 }
-  
+
 #conteiner-buttons>button {
     width: 120px;
     height: 40px;
@@ -165,7 +173,7 @@ body {
     overflow: hidden;
 }
 
-#observacoes, #conteiner-buttons {
+#conteiner-buttons {
     width: 96%;
     height: fit-content;
     margin: 1rem auto;
@@ -207,6 +215,7 @@ body {
     background-color: rgb(221, 219, 219);
     padding: 2px;
 }
+
 /* 
 #tabela_resumo tr:nth-child(6) {
     height:20px;
@@ -339,7 +348,7 @@ ul li p {
     width: 96%;
     margin: 4px auto 0 auto;
 }
-   
+
 .footer-item, .footer-item-obs {
     font-size: xx-small;
     width: 45%;
@@ -366,11 +375,11 @@ ul li p {
 
 .title-item {
     padding: 18px 10px 4px 18px;
-    font-weight: bolder;    
+    font-weight: bolder;
     font-size: xx-small;
     color: #202020;
 }
-   
+
 .content-item {
     padding: 4px 15px 7px 18px;
     color: #000;
@@ -431,9 +440,9 @@ ul li p {
     display: flex;
     justify-content: space-between;
     margin: 3rem auto 0 auto;
-    padding: 1rem;
-    box-shadow: 1px 1px 4px #c2c2c2;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    padding: 1rem 0;
+    /* box-shadow: 1px 1px 4px #c2c2c2;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px; */
     border-radius: 5px;
 }
 
@@ -441,11 +450,17 @@ ul li p {
     display: flex;
     flex: 1;
 }
-
+.container-didaticos-taxa div label {
+    font-size: 12px !important;
+    color: rgb(82, 82, 82);
+    font-weight: 600;
+}
 #taxa {
     width: 40%;
     margin-left: 10px;
+    color: gray;
 }
+
 #taxaol {
     margin: 30px auto;
     width: 80%;
@@ -528,7 +543,7 @@ ul li p {
     width: 100px;
 }
 
-.divCheck { 
+.divCheck {
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -588,6 +603,7 @@ ul li p {
     /* border: 1px solid #ced4da; */
     border: none;
 }
+
 #codigoddd:active {
     border: none;
     outline: none;
@@ -658,4 +674,28 @@ ul li p {
 .footerprincipal a:hover {
     color: black;
     cursor: pointer;
+}
+
+.conteinerObservacoes {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.conteinerDeObservacoes {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin-top: 2rem;
+    padding: 0 1rem 1rem 1rem;
+}
+
+.conteinerObservacoes span {
+    color: gray;
+    cursor: pointer;
+}
+
+.labeltxarea {
+    font-size: 12px;
+    color: rgb(82, 82, 82);
+    font-weight: 600;
 }
