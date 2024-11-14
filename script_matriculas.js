@@ -755,10 +755,10 @@ function copiarDados() {
     pre4 = "(presente)";
   }
 
-  let textoColagem1="Aluno 1) "+n1.value+" "+pre1+", "+serie1+", "+p1.value+"x R$ "+m1.value+", "+d1.value+"%, "+l1+dt1+", taxa: R$ "+taxa1.value+",00. ";
-  let textoColagem2="Aluno 2) "+n2.value+" "+pre2+", "+serie2+", "+p2.value+"x R$ "+m2.value+", "+d2.value+"%, "+l2+dt2+", taxa: R$ "+taxa1.value+",00. ";
-  let textoColagem3="Aluno 3) "+n3.value+" "+pre3+", "+serie3+", "+p3.value+"x R$ "+m3.value+", "+d3.value+"%, "+l3+dt3+", taxa: R$ "+taxa1.value+",00. ";
-  let textoColagem4="Aluno 4) "+n4.value+" "+pre4+", "+serie4+", "+p4.value+"x R$ "+m4.value+", "+d4.value+"%, "+l4+dt4+", taxa: R$ "+taxa1.value+",00. ";
+  let textoColagem1 = "Aluno 1) " + n1.value + " " + pre1 + ", " + serie1 + ", " + p1.value + "x R$ " + m1.value + ", " + d1.value + "%, " + l1 + dt1 + ", taxa: R$ " + taxa1.value + ",00. ";
+  let textoColagem2 = "Aluno 2) " + n2.value + " " + pre2 + ", " + serie2 + ", " + p2.value + "x R$ " + m2.value + ", " + d2.value + "%, " + l2 + dt2 + ", taxa: R$ " + taxa1.value + ",00. ";
+  let textoColagem3 = "Aluno 3) " + n3.value + " " + pre3 + ", " + serie3 + ", " + p3.value + "x R$ " + m3.value + ", " + d3.value + "%, " + l3 + dt3 + ", taxa: R$ " + taxa1.value + ",00. ";
+  let textoColagem4 = "Aluno 4) " + n4.value + " " + pre4 + ", " + serie4 + ", " + p4.value + "x R$ " + m4.value + ", " + d4.value + "%, " + l4 + dt4 + ", taxa: R$ " + taxa1.value + ",00. ";
   
   let textoObs = ""
   
