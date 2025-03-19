@@ -357,7 +357,6 @@ function myFunctionPg() {
 // Gera arquivo em PDF com todas as informações da negociação
 function gerarPDF() {
   let resp = document.getElementById("input-responsaveis").value;
-
   let contato = document.getElementById("input-melhor-contato").value;
 
   document.getElementById("resp-e-contato").innerHTML =
@@ -385,55 +384,20 @@ function gerarPDF() {
   let valor3 = document.getElementById("valorFinal3");
   let valor4 = document.getElementById("valorFinal4");
 
-  // variáveis dos didáticos
   let didat1 = document.getElementById("checkDidaticos1");
   let didat2 = document.getElementById("checkDidaticos2");
   let didat3 = document.getElementById("checkDidaticos3");
   let didat4 = document.getElementById("checkDidaticos4");
 
-  // variáveis das séries
   let serie1 = document.getElementById("serie1");
   let serie2 = document.getElementById("serie2");
   let serie3 = document.getElementById("serie3");
   let serie4 = document.getElementById("serie4");
 
-  // condicionais dos didáticos
-  if (didat1.checked == true) {
-    document.getElementById("didaticos1").innerHTML = "Inclusos";
-  } else {
-    if (serie1.value != "0.0") {
-      document.getElementById("didaticos1").innerHTML = "Não Inclusos";
-    } else {
-      document.getElementById("didaticos1").innerHTML = "";
-    }
-  }
-  if (didat2.checked == true) {
-    document.getElementById("didaticos2").innerHTML = "Inclusos";
-  } else {
-    if (serie2.value != "0.0") {
-      document.getElementById("didaticos2").innerHTML = "Não Inclusos";
-    } else {
-      document.getElementById("didaticos2").innerHTML = "";
-    }
-  }
-  if (didat3.checked == true) {
-    document.getElementById("didaticos3").innerHTML = "Inclusos";
-  } else {
-    if (serie3.value != "0.0") {
-      document.getElementById("didaticos3").innerHTML = "Não Inclusos";
-    } else {
-      document.getElementById("didaticos3").innerHTML = "";
-    }
-  }
-  if (didat4.checked == true) {
-    document.getElementById("didaticos4").innerHTML = "Inclusos";
-  } else {
-    if (serie4.value != "0.0") {
-      document.getElementById("didaticos4").innerHTML = "Não Inclusos";
-    } else {
-      document.getElementById("didaticos4").innerHTML = "";
-    }
-  }
+  document.getElementById("didaticos1").innerHTML = didat1.checked ? "Inclusos" : serie1.value !== "0.0" ? "Não Inclusos" : "";
+  document.getElementById("didaticos2").innerHTML = didat2.checked ? "Inclusos" : serie2.value !== "0.0" ? "Não Inclusos" : "";
+  document.getElementById("didaticos3").innerHTML = didat3.checked ? "Inclusos" : serie3.value !== "0.0" ? "Não Inclusos" : "";
+  document.getElementById("didaticos4").innerHTML = didat4.checked ? "Inclusos" : serie4.value !== "0.0" ? "Não Inclusos" : "";
 
   let somatorio = document.getElementById("divSomaTotal").innerText;
 
@@ -447,78 +411,40 @@ function gerarPDF() {
   document.getElementById("sre3").innerHTML = ser3.innerText;
   document.getElementById("sre4").innerHTML = ser4.innerText;
 
-  if (document.getElementById("serie1").value === "0.0") {
-    document.getElementById("p1").innerHTML = "";
-  } else {
-    document.getElementById("p1").innerHTML = parc1.value;
-  }
-  if (document.getElementById("serie2").value === "0.0") {
-    document.getElementById("p2").innerHTML = "";
-  } else {
-    document.getElementById("p2").innerHTML = parc2.value;
-  }
-  if (document.getElementById("serie3").value === "0.0") {
-    document.getElementById("p3").innerHTML = "";
-  } else {
-    document.getElementById("p3").innerHTML = parc3.value;
-  }
-  if (document.getElementById("serie4").value === "0.0") {
-    document.getElementById("p4").innerHTML = "";
-  } else {
-    document.getElementById("p4").innerHTML = parc4.value;
-  }
+  document.getElementById("p1").innerText = serie1.value !== "0.0" ? parc1.value : "";
+  document.getElementById("p2").innerText = serie2.value !== "0.0" ? parc2.value : "";
+  document.getElementById("p3").innerText = serie3.value !== "0.0" ? parc3.value : "";
+  document.getElementById("p4").innerText = serie4.value !== "0.0" ? parc4.value : "";
 
-  document.getElementById("v1").innerHTML = valor1.value;
-  document.getElementById("val2").innerHTML = valor2.value;
-  document.getElementById("val3").innerHTML = valor3.value;
-  document.getElementById("val4").innerHTML = valor4.value;
-  // document.getElementById('totalFinal').innerHTML = somatoria.innerText
-  document.getElementById("totalFinal").innerHTML = somatorio;
+  document.getElementById("v1").innerText = valor1.value;
+  document.getElementById("val2").innerText = valor2.value;
+  document.getElementById("val3").innerText = valor3.value;
+  document.getElementById("val4").innerText = valor4.value;
+  document.getElementById("totalFinal").innerText = somatorio;
 
   let taxa = document.getElementById("taxa").value;
-  document.getElementById("taxa-valor").innerHTML = parseFloat(
-    taxa
-  ).toLocaleString("pt-br", { style: "currency", currency: "BRL" });
+  document.getElementById("taxa-valor").innerText = parseFloat(taxa).toLocaleString("pt-br", { style: "currency", currency: "BRL" });
 
   let atendente = document.getElementById("select-atendentes").value;
-  document.getElementById("nome-atendente").innerHTML =
-    "Atendente <br>" + atendente;
+  document.getElementById("nome-atendente").innerHTML = "Atendente <br>" + atendente;
 
   let obs = document.getElementById("input-obs").value;
-  if (obs !== "") {
-    document.getElementById("observacoes-text-area").style.display = "block";
-  } else {
-    document.getElementById("observacoes-text-area").style.display = "none";
-  }
+  document.getElementById("observacoes-text-area").style.display = obs !== "" ? "block" : "none";
   document.getElementById("obs-print").innerHTML = obs;
 
-  // console.log('Gerar PDF')
-  var alunos = `${aluno1.value}`;
-
-  if (aluno2.value !== "" && aluno3.value == "" && aluno4.value == "") {
-    alunos += `_${aluno2.value}`;
-  } else if (aluno2.value !== "" && aluno3.value !== "" && aluno4.value == "") {
-    alunos += `_${aluno2.value}_${aluno3.value}`;
-  } else if (
-    aluno2.value !== "" &&
-    aluno3.value !== "" &&
-    aluno4.value !== ""
-  ) {
-    alunos += `_${aluno2.value}_${aluno3.value}_${aluno4.value}`;
-  }
+  var alunos = aluno1.value;
+  if (aluno2.value) alunos += `_${aluno2.value}`;
+  if (aluno3.value) alunos += `_${aluno3.value}`;
+  if (aluno4.value) alunos += `_${aluno4.value}`;
 
   var options = { filename: alunos };
 
-  //try {
-  html2pdf(dados, options).from(dados).save();
-
-  //}
-  //catch (e) {
-  // console.error(e)
-  //}
+  html2pdf().from(dados).set(options).save();
 
   dataHoje();
 }
+
+
 
 // Exibe a data e hora atual e o contato do atendente
 function dataHoje() {
