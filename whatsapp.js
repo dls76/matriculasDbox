@@ -37,7 +37,7 @@ function sendDataToClientWhatsApp() {
    const intro = `Olá, *${responsavel}*!%0aObrigado pela visita!%0aConforme combinamos, segue nossa proposta:%0a`;
    
    const msginfo = 
-   `*Taxa de eventos*%0aR$ 570,00 por aluno.%0aPagamento na matrícula.%0a%0a` +
+   `*Taxa de eventos*%0aR$ 594,00 por aluno.%0aPagamento na matrícula.%0a%0a` +
    `*Livros, materiais e uniformes*%0alinktr.ee/novotempostoreasp%0a%0a` +
    `*Cantina terceirizada*%0aAcompanhamento nutricional%0aWhatsApp: 99611.7704%0a%0a` +
    `*Entrevista pedagógica*%0a- Presença do aluno e pelo menos um responsável%0a- É requisito p/ matrícula%0a- Agendar dia e horário%0a- Trazer boletim recente.%0a%0a` +
