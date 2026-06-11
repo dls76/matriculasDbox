@@ -350,7 +350,7 @@ ul li p {
 }
 
 .footer-item, .footer-item-obs {
-    font-size: 1rem;
+    font-size: .85rem;
     width: 45%;
     height: 110px;
     margin: 6px auto;
@@ -383,7 +383,7 @@ ul li p {
 .content-item {
     padding: 4px 15px 7px 18px;
     color: #000;
-    font-size: 1rem;
+    font-size: .85rem;
 }
 
 .content-item-obs {
@@ -474,7 +474,7 @@ ul li p {
 
 #nome-atendente {
     text-align: center;
-    font-size: 1rem;
+    font-size: .85rem;
     color: gray;
     margin: 0;
     padding: 0;
