@@ -668,7 +668,7 @@
     <h5 id="titulo_resumo2" class="titulo_resumo2">VALORES PARA 2026</h5>
     <p id="resp-e-contato"></p>
 
-    <div id="main">
+    <div id="main" class="print-area">
 
         <!-- Resumo filhos série e valores -->
         <table id="tabela_resumo">
@@ -728,8 +728,8 @@
             </tr>
         </table>
 
-        <!-- Observações Didáticos, Validade Proposta e Opção de pagamento -->
-        <div class="adicionais footer-item" id="footer-item-obs">
+        <!-- Informações Adicionais -->
+        <div class="footer-item" id="footer-item-obs">
             <div class="title-item">Informações Adicionais</div>
             <div id="textPg" class="content-item-obs" style="display: none;"></div>
             <div id="textD" class="content-item-obs" style="display:none">Didáticos inclusos. Entrega no início do período de aulas, mediante quitação das mensalidades de janeiro e fevereiro.</div>
@@ -737,7 +737,7 @@
         </div>
 
         <!-- Livros, materiais e uniformes -->
-        <div class="adicionais footer-item" id="footer-item-obs">
+        <div class="footer-item" id="footer-item-obs">
             <div class="title-item">Livros, Materiais e Uniformes</div>
             <div class="content-item-obs" id="last-child-obs">Disponíveis na Novo Tempo Store: <br>
             <i>https://linktr.ee/novotempostoreasp</i>
@@ -760,10 +760,8 @@
         </div>
 
         <!-- Horário das aulas -->
-        <div class="adicionais footer-item" id="footer-item-ct">
-
+        <div class="footer-item" id="footer-item-ct">
             <div class="title-item">Horários de aula</div>
-
                 <ul>
                     <li>Manhã
                         <ul>
@@ -778,20 +776,18 @@
                         </ul>
                     </li>
                 </ul>
-            </div>
+        </div>
+        
+        <!-- Observações -->
+        <div class="footer-item" id="observacoes-text-area">
+            <div class="title-item">Observações</div>
+            <div class="content-item-obs" id="obs-print"></div>        
         </div>
 
-    <!-- Observações -->
-    <div class="adicionais footer-item" id="observacoes-text-area">
-        <div class="title-item">Observações</div>
-        <div class="content-item-obs" id="obs-print"></div>        
+        <!-- Atendente e data -->
+        <div id="nome-atendente"></div>
+        <div id="dataAtual"></div>
     </div>
-
-    <!-- Atendente e data -->
-    <div id="nome-atendente"></div>
-    <div id="dataAtual"></div>
-
-</div>
 
 <br>
 
@@ -854,63 +850,6 @@
             <hr>
         
         </div>
-    </div>
-</div>
-
-<!-- POPUP CONTRATURNO -->
-<div class="popup" id="popupCt">
-
-    <div class="overlay"></div>
-    
-    <div class="content">
-        <div class="close-btn" onclick="toggleCT()"><i class="fa-solid fa-circle-xmark"></i>;</div>
-        <h5>Contraturno</h5>
-
-        <table class="tabelaCt" style="width: 90%; margin: 30px auto 0 auto; font-size: small;">
-            <th style="width: 10%;">Plano</th>
-            <th style="width: 10%;">Chegada</th>
-            <th style="width: 60%;">Serviços</th>
-            <th style="width: 10%;">Desconto</th>
-            <th style="width: 20%;">Valor</th>
-
-            <tr>
-                <td>6h</td>
-                <td>7:00</td>
-                <td style="text-align: left; font-size: smaller;">Almoço, Higiene, Descanso, Tarefas, Lanche 1, Lanche 2, Projeto, Oficina 1, Oficina 2, Esporte, Recreação</td>
-                <td>0%</td>
-                <td>R$ 722,00</td>
-            </tr>
-            <tr>
-                <td>3h</td>
-                <td>10:00</td>
-                <td style="text-align: left;">Almoço, Higiene, Descanso, Tarefas, 1 Lanche, Projeto, Oficina 1</td>
-                <td>20%</td>
-                <td>R$ 577,60</td>
-            </tr>
-        </table>
-
-        <table class="tabelaCt" style="width: 90%; margin: 30px auto 0 auto; font-size: small;">
-            <th style="width: 10%;">Plano</th>
-            <th style="width: 10%;">Saída</th>
-            <th style="width: 60%;">Serviços</th>
-            <th style="width: 10%;">Desconto</th>
-            <th style="width: 20%;">Valor</th>
-
-            <tr>
-                <td>3h</td>
-                <td>15:00</td>
-                <td style="text-align: left;">Almoço, Higiene, Descanso, Tarefas, 1 Lanche, Projeto, Oficina 1</td>
-                <td>20%</td>
-                <td>R$ 577,60</td>
-            </tr>
-            <tr>
-                <td>6h</td>
-                <td>18:00</td>
-                <td style="text-align: left; font-size: smaller;">Almoço, Higiene, Descanso, Tarefas, Lanche 1, Lanche 2, Projeto, Oficina 1, Oficina 2, Esporte, Recreação</td>
-                <td>0%</td>
-                <td>R$ 722,00</td>
-            </tr>
-        </table>
     </div>
 </div>
 

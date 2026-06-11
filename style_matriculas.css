@@ -193,6 +193,7 @@ body {
 /* Corpo da área de impressão */
 #main {
     width: 100%;
+    max-width: 900px;
     margin: 10px 0 0 0;
     padding: 0;
 }
@@ -355,7 +356,7 @@ ul li p {
 /*height: 110px;*/
     margin: 6px auto;
     box-shadow: 3px 3px 5px darkgray;
-    border-left: 4px solid #707070;
+    border-left: 4px solid #0B5ED7 !important;
     border-radius: 7px;
     border-top: 1px solid whitesmoke;
     border-right: 1px solid whitesmoke;
