@@ -294,7 +294,7 @@ body {
 }
 
 .titulo_resumo2 {
-    font-size: smaller;
+    font-size: 1rem;
     color: #838282;
     text-align: center;
     margin-top: 30px;
@@ -350,7 +350,7 @@ ul li p {
 }
 
 .footer-item, .footer-item-obs {
-    font-size: xx-small;
+    font-size: 1rem;
     width: 45%;
     height: 110px;
     margin: 6px auto;
@@ -376,20 +376,20 @@ ul li p {
 .title-item {
     padding: 18px 10px 4px 18px;
     font-weight: bolder;
-    font-size: xx-small;
+    font-size: 1rem;
     color: #202020;
 }
 
 .content-item {
     padding: 4px 15px 7px 18px;
     color: #000;
-    font-size: xx-small;
+    font-size: 1rem;
 }
 
 .content-item-obs {
     padding: 0 18px;
     margin: 0;
-    font-size: xx-small;
+    font-size: 1rem;
     color: #000;
 }
 
@@ -474,7 +474,7 @@ ul li p {
 
 #nome-atendente {
     text-align: center;
-    font-size: xx-small;
+    font-size: 1rem;
     color: gray;
     margin: 0;
     padding: 0;
@@ -483,12 +483,12 @@ ul li p {
 #dataAtual {
     margin-top: 0;
     text-align: center;
-    font-size: xx-small;
+    font-size: 1rem;
     color: gray;
 }
 
 #observacoes-text-area {
-    font-size: xx-small;
+    font-size: 1rem;
     width: 91%;
     margin-top: 1rem;
     height: fit-content;
@@ -516,7 +516,7 @@ ul li p {
 
 #resp-e-contato {
     text-align: right;
-    font-size: x-small;
+    font-size: 1rem;
 }
 
 #loja {
