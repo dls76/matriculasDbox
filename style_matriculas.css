@@ -352,7 +352,7 @@ ul li p {
 .footer-item, .footer-item-obs {
     font-size: .85rem;
     width: 45%;
-    height: 110px;
+/*height: 110px;*/
     margin: 6px auto;
     box-shadow: 3px 3px 5px darkgray;
     border-left: 4px solid #707070;
@@ -377,7 +377,8 @@ ul li p {
     padding: 18px 10px 4px 18px;
     font-weight: bolder;
     font-size: 1rem;
-    color: #202020;
+    color: #014B7B;
+    
 }
 
 .content-item {
